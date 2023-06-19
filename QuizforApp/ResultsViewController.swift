@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 class ResultsViewController: UIViewController {
 
     @IBOutlet weak var headerLabel: UILabel!
@@ -16,7 +14,7 @@ class ResultsViewController: UIViewController {
 
     private var summary = ""
     private var answers = [PresentableAnswer]()
-    
+
     convenience init(summary: String, answers: [PresentableAnswer]) {
         self.init()
         self.summary = summary
@@ -62,4 +60,3 @@ extension ResultsViewController: UITableViewDataSource {
         return cell
     }
 }
-
