@@ -20,6 +20,8 @@
 		D31903D32A32B5740068F522 /* CorrectAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D31903D22A32B5740068F522 /* CorrectAnswerCell.xib */; };
 		D31903D72A32BB6F0068F522 /* WrongAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31903D62A32BB6F0068F522 /* WrongAnswerCell.swift */; };
 		D31903D92A32C3300068F522 /* WrongAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D31903D82A32C3300068F522 /* WrongAnswerCell.xib */; };
+		D35EFB702A4E13CD00551028 /* QuizforEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35EFB6F2A4E13CD00551028 /* QuizforEngine.framework */; };
+		D35EFB712A4E13CD00551028 /* QuizforEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D35EFB6F2A4E13CD00551028 /* QuizforEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D38CFAF62A3350690084160F /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38CFAF52A3350690084160F /* UITableViewExtensions.swift */; };
 		D38CFAF82A3350A10084160F /* PresentableAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38CFAF72A3350A10084160F /* PresentableAnswer.swift */; };
 		D3D57E1B2A32949F00CA54B2 /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3D57E1A2A32949F00CA54B2 /* ResultsViewController.xib */; };
@@ -35,6 +37,20 @@
 			remoteInfo = QuizforApp;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D35EFB722A4E13CD00551028 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D35EFB712A4E13CD00551028 /* QuizforEngine.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		889247152A15FB0D00F27603 /* QuestionViewControler.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionViewControler.xib; sourceTree = "<group>"; };
@@ -53,6 +69,7 @@
 		D31903D22A32B5740068F522 /* CorrectAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CorrectAnswerCell.xib; sourceTree = "<group>"; };
 		D31903D62A32BB6F0068F522 /* WrongAnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongAnswerCell.swift; sourceTree = "<group>"; };
 		D31903D82A32C3300068F522 /* WrongAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WrongAnswerCell.xib; sourceTree = "<group>"; };
+		D35EFB6F2A4E13CD00551028 /* QuizforEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QuizforEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D38CFAF52A3350690084160F /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		D38CFAF72A3350A10084160F /* PresentableAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableAnswer.swift; sourceTree = "<group>"; };
 		D3D57E1A2A32949F00CA54B2 /* ResultsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultsViewController.xib; sourceTree = "<group>"; };
@@ -64,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D35EFB702A4E13CD00551028 /* QuizforEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +101,7 @@
 				88C013972A15F2ED00BE0989 /* QuizforApp */,
 				88C013AE2A15F2F000BE0989 /* QuizforAppTests */,
 				88C013962A15F2ED00BE0989 /* Products */,
+				D35EFB6E2A4E13CD00551028 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +146,14 @@
 			path = QuizforAppTests;
 			sourceTree = "<group>";
 		};
+		D35EFB6E2A4E13CD00551028 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35EFB6F2A4E13CD00551028 /* QuizforEngine.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +165,7 @@
 				88C013922A15F2ED00BE0989 /* Frameworks */,
 				88C013932A15F2ED00BE0989 /* Resources */,
 				D38CFAF92A3366290084160F /* ShellScript */,
+				D35EFB722A4E13CD00551028 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
