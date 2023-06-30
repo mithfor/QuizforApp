@@ -11,7 +11,7 @@ import XCTest
 
 class NavigationControlerRouterTest: XCTestCase {
 
-    let navigationController = UINavigationController()
+    let navigationController = NoneAnimatedNavigationController()
     let factory = ViewControllerFactoryStub()
 
     lazy var sut: NavigationControllerRouter = {
@@ -40,6 +40,12 @@ class NavigationControlerRouterTest: XCTestCase {
         factory.answerCallback["Q1"]!("anything")
 
         XCTAssertTrue(callbackWasFired)
+    }
+
+    class NoneAnimatedNavigationController: UINavigationController {
+        override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+            super.pushViewController(viewController, animated: false)
+        }
     }
 
     class ViewControllerFactoryStub: ViewControllerFactory {
