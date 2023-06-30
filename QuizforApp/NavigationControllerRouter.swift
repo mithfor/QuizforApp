@@ -10,7 +10,7 @@ import QuizforEngine
 
 enum Question<T: Hashable>: Hashable {
     case singleAnswer(T)
-    case multileAnswer(T)
+    case multipleAnswer(T)
 
     func hash(into hasher: inout Hasher) {
 
@@ -18,13 +18,20 @@ enum Question<T: Hashable>: Hashable {
         case .singleAnswer(let value):
             hasher.combine(value)
 
-        case .multileAnswer(let value):
+        case .multipleAnswer(let value):
             hasher.combine(value)
         }
     }
 
     static func == (lhs: Question<T>, rhs: Question<T>) -> Bool {
-        return false
+        switch (lhs, rhs) {
+        case ( .singleAnswer(let aValue), .singleAnswer(let bValue) ):
+            return aValue == bValue
+        case ( .multipleAnswer(let aValue), .multipleAnswer(let bValue) ):
+            return aValue == bValue
+        default:
+            return false
+        }
     }
 }
 
