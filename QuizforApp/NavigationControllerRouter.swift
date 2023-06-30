@@ -8,6 +8,26 @@
 import UIKit
 import QuizforEngine
 
+enum Question<T: Hashable>: Hashable {
+    case singleAnswer(T)
+    case multileAnswer(T)
+
+    func hash(into hasher: inout Hasher) {
+
+        switch self {
+        case .singleAnswer(let value):
+            hasher.combine(value)
+
+        case .multileAnswer(let value):
+            hasher.combine(value)
+        }
+    }
+
+    static func == (lhs: Question<T>, rhs: Question<T>) -> Bool {
+        return false
+    }
+}
+
 protocol ViewControllerFactory {
     func questionViewController(for question: String, answerCallback: @escaping (String) -> Void) -> UIViewController
 }
