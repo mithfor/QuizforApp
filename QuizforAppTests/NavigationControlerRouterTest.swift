@@ -95,19 +95,3 @@ class NavigationControlerRouterTest: XCTestCase {
 
     }
 }
-
-extension QuizResult: Hashable {
-
-    static func make(answers: [Question: Answer] = [:], score: Int = 1) -> QuizResult<Question, Answer> {
-        return QuizResult(answers: answers, score: score)
-    }
-
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(1)
-    }
-
-    public static func == (lhs: QuizforEngine.QuizResult<Question, Answer>,
-                           rhs: QuizforEngine.QuizResult<Question, Answer>) -> Bool {
-        return lhs.score == rhs.score
-    }
-}

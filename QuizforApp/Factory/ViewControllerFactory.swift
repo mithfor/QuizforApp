@@ -14,4 +14,3 @@ protocol ViewControllerFactory {
 
     func resultViewController(for result: QuizResult<Question<String>, [String]>) -> UIViewController
 }
-
