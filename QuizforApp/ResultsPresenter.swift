@@ -13,6 +13,7 @@ import QuizforEngine
 struct ResultsPresenter {
 
     let result: QuizResult<Question<String>, [String]>
+    let questions: [Question<String>]
     let correctAnswers: [Question<String>: [String]]
 
     var summary: String {
@@ -20,9 +21,10 @@ struct ResultsPresenter {
     }
 
     var presentableAnswers: [PresentableAnswer] {
-        return result.answers.map { (question, userAnswer) in
+        return questions.map { (question) in
 
-            guard let correctAnswer = correctAnswers[question] else {
+            guard let userAnswer = result.answers[question],
+                  let correctAnswer = correctAnswers[question] else {
                 fatalError("Couldn't find correct answer fo question: \(question)")
             }
 
@@ -50,10 +52,10 @@ struct ResultsPresenter {
     private func formattedAnswer(_ answer: [String]) -> String {
         return answer.joined(separator: ", ")
     }
-
+    
     private func formattedWrongAnswer(_ question: Question<String>,
-                             _ userAnswer: [String],
-                             _ correctAnswer: [String]) -> String? {
+                                      _ userAnswer: [String],
+                                      _ correctAnswer: [String]) -> String? {
         return correctAnswer == userAnswer ? nil : formattedAnswer(userAnswer)
     }
 
