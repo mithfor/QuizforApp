@@ -30,9 +30,11 @@ class IOSViewControllerFactory: ViewControllerFactory {
 
         switch question {
         case .singleAnswer(let value):
-            return QuestionViewControler(question: value,
+            let controller =  QuestionViewControler(question: value,
                                          options: options,
                                          selection: answerCallback)
+            controller.title = "Question #1"
+            return controller
             
         case .multipleAnswer(let value):
             let controller = QuestionViewControler(question: value,
