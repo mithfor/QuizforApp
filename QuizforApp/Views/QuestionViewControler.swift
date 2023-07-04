@@ -13,19 +13,22 @@ class QuestionViewControler: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     private(set) var question = ""
     private(set) var options = [String]()
+    private(set) var allowsMultipleSelection = false
     private let reuseIdentifier = "Cell"
     private var selection: (([String]) -> Void)?
 
-    convenience init(question: String, options: [String], selection: @escaping ([String]) -> Void) {
+    convenience init(question: String, options: [String], allowsMultipleSelection: Bool, selection: @escaping ([String]) -> Void) {
         self.init()
         self.question = question
         self.options = options
+        self.allowsMultipleSelection = allowsMultipleSelection
         self.selection = selection
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.allowsMultipleSelection = allowsMultipleSelection
         headerLabel.text = question
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
     }

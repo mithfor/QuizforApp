@@ -8,8 +8,6 @@
 import Foundation
 import QuizforEngine
 
-// swiftlint:disable force_cast
-
 struct ResultsPresenter {
 
     let result: QuizResult<Question<String>, [String]>
@@ -60,5 +58,3 @@ struct ResultsPresenter {
     }
 
 }
-
-// swiftlint:enable force_cast
