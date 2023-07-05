@@ -14,7 +14,7 @@ class IOSViewControllerFactory: ViewControllerFactory {
     private let options: [Question<String>: [String]]
     private let correctAnswers: [Question<String>: [String]]
 
-    init(questions: [Question<String>], options: [Question<String> : [String]], correctAnswers: [Question<String>: [String]]) {
+    init(questions: [Question<String>], options: [Question<String>: [String]], correctAnswers: [Question<String>: [String]]) {
         self.questions = questions
         self.options = options
         self.correctAnswers = correctAnswers
@@ -30,7 +30,9 @@ class IOSViewControllerFactory: ViewControllerFactory {
 
     }
 
-    private func questionViewController(for question: Question<String>, options: [String], answerCallback: @escaping ([String]) -> Void) -> UIViewController {
+    private func questionViewController(for question: Question<String>,
+                                        options: [String],
+                                        answerCallback: @escaping ([String]) -> Void) -> UIViewController {
 
         switch question {
         case .singleAnswer(let value):
