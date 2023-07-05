@@ -14,6 +14,13 @@ class ResultsPresenterTest: XCTestCase {
     let singleAnswerQuestion = Question.singleAnswer("Q1")
     let multipleAnswerQuestion = Question.multipleAnswer("Q2")
 
+    func test_title_returnsFormatedTitle() {
+        let result: QuizResult<Question<String>, [String]> = QuizResult(answers: [:], score: 0)
+        let sut = ResultsPresenter(result: result, questions: [], correctAnswers: [:])
+
+        XCTAssertEqual(sut.title, "Result")
+    }
+
     func test_summary_withTwoQuestionsAndScoreOne_returnsSummary() {
         // given (Arrange)
 
