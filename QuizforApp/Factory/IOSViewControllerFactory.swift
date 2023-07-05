@@ -12,11 +12,12 @@ class IOSViewControllerFactory: ViewControllerFactory {
 
     private let questions: [Question<String>]
     private let options: [Question<String>: [String]]
+    private let correctAnswers: [Question<String>: [String]]
 
-    init(questions: [Question<String>], options: [Question<String>: [String]]) {
+    init(questions: [Question<String>], options: [Question<String> : [String]], correctAnswers: [Question<String> : [String]]) {
         self.questions = questions
         self.options = options
-
+        self.correctAnswers = correctAnswers
     }
 
     func questionViewController(for question: Question<String>,
@@ -65,6 +66,10 @@ class IOSViewControllerFactory: ViewControllerFactory {
     }
 
     func resultViewController(for result: QuizforEngine.QuizResult<Question<String>, [String]>) -> UIViewController {
-        return ResultsViewController()
+        let presenter = ResultsPresenter(result: result,
+                                         questions: questions,
+                                         correctAnswers: correctAnswers)
+        return ResultsViewController(summary: presenter.summary,
+                                     answers: presenter.presentableAnswers)
     }
 }
