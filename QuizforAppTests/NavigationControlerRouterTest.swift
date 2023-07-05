@@ -14,8 +14,10 @@ class NavigationControlerRouterTest: XCTestCase {
 
     let navigationController = NoneAnimatedNavigationController()
     let factory = ViewControllerFactoryStub()
-    let multipleAnswerQuestion = Question.multipleAnswer("Q1")
     let singleAnswerQuestion = Question.singleAnswer("Q1")
+    let singleAnswerQuestion2 = Question.singleAnswer("Q2")
+
+    let multipleAnswerQuestion = Question.multipleAnswer("Q2")
 
     lazy var sut: NavigationControllerRouter = {
         return NavigationControllerRouter(self.navigationController, factory: self.factory)
@@ -26,10 +28,10 @@ class NavigationControlerRouterTest: XCTestCase {
         let viewController = UIViewController()
         let secondViewController = UIViewController()
         factory.stub(question: singleAnswerQuestion, with: viewController)
-        factory.stub(question: Question.singleAnswer("Q2"), with: secondViewController)
+        factory.stub(question: singleAnswerQuestion2, with: secondViewController)
 
         sut.routeTo(question: singleAnswerQuestion, answerCallback: { _ in })
-        sut.routeTo(question: Question.singleAnswer("Q2"), answerCallback: { _ in })
+        sut.routeTo(question: singleAnswerQuestion2, answerCallback: { _ in })
 
         XCTAssertEqual(navigationController.viewControllers.count, 2)
         XCTAssertEqual(navigationController.viewControllers.first, viewController)
@@ -124,12 +126,12 @@ class NavigationControlerRouterTest: XCTestCase {
 
         factory.answerCallback[multipleAnswerQuestion]!(["A1"])
 
-        let button = viewController.navigationItem.rightBarButtonItem!
-
-        button.simulateTap()
+        viewController.navigationItem.rightBarButtonItem?.simulateTap()
 
         XCTAssertTrue(callbackWasFired)
     }
+
+    // MARK: - Helpers
 
     class NoneAnimatedNavigationController: UINavigationController {
         override func pushViewController(_ viewController: UIViewController, animated: Bool) {
