@@ -65,6 +65,6 @@ class IOSViewControllerFactory: ViewControllerFactory {
     }
 
     func resultViewController(for result: QuizforEngine.QuizResult<Question<String>, [String]>) -> UIViewController {
-        return UIViewController()
+        return ResultsViewController()
     }
 }

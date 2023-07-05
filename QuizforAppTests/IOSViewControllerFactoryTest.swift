@@ -8,6 +8,7 @@
 import UIKit
 import XCTest
 @testable import QuizforApp
+@testable import QuizforEngine
 
 // swiftlint:disable all
 class IOSViewControllerFactoryTest: XCTestCase {
@@ -63,6 +64,14 @@ class IOSViewControllerFactoryTest: XCTestCase {
     func test_questionViewController_multipleAnswer_createControllerWithMultipleSelection() {
 
         XCTAssertTrue(makeQuestionController(question: multipleAnswerQuestion).allowsMultipleSelection)
+    }
+
+    func test_resultViewController_createsController() {
+
+        let result = QuizResult(answers: [Question<String>: [String]](), score: 0)
+        let sut = makeSUT(options: [:])
+        let controller = sut.resultViewController(for: result) as? ResultsViewController
+        XCTAssertNotNil(controller)
     }
 
 
