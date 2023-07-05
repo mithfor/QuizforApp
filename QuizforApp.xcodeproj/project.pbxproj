@@ -139,19 +139,11 @@
 		88C013972A15F2ED00BE0989 /* QuizforApp */ = {
 			isa = PBXGroup;
 			children = (
-				88C013982A15F2ED00BE0989 /* AppDelegate.swift */,
-				88C0139A2A15F2ED00BE0989 /* SceneDelegate.swift */,
-				88C013A12A15F2EF00BE0989 /* Assets.xcassets */,
-				88C013A32A15F2EF00BE0989 /* LaunchScreen.storyboard */,
 				88C013A62A15F2EF00BE0989 /* Info.plist */,
-				D3E4C9672A52A3C7006F9FA4 /* Views */,
-				D3E4C9682A52A3D9006F9FA4 /* Cells */,
-				D38CFAF52A3350690084160F /* UITableViewExtensions.swift */,
-				D38CFAF72A3350A10084160F /* PresentableAnswer.swift */,
-				D35EFB752A4E179900551028 /* NavigationControllerRouter.swift */,
-				D3E4C96C2A52A85C006F9FA4 /* ResultsPresenter.swift */,
-				D3A4D7DF2A5379F7006957A6 /* QuestionPresenter.swift */,
-				D3E4C9692A52A3FA006F9FA4 /* Factory */,
+				D3AA72BE2A55F3DD00502424 /* Main */,
+				D3E4C9672A52A3C7006F9FA4 /* UI */,
+				D3AA72C32A55F47900502424 /* Presentation */,
+				D3E4C9692A52A3FA006F9FA4 /* Routing */,
 			);
 			path = QuizforApp;
 			sourceTree = "<group>";
@@ -159,14 +151,10 @@
 		88C013AE2A15F2F000BE0989 /* QuizforAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				88C013C82A15F4A400BE0989 /* QuestionViewControlerTest.swift */,
-				D3D57E1E2A3295D400CA54B2 /* ResultsViewControllerTest.swift */,
-				D31903CC2A32A6820068F522 /* TableViewHelpers.swift */,
-				D35EFB732A4E14F900551028 /* NavigationControlerRouterTest.swift */,
-				D30A9B732A4F117300FDEA3E /* IOSViewControllerFactoryTest.swift */,
-				D3E4C9652A52A3B0006F9FA4 /* ResultsPresenterTest.swift */,
-				D3E4C96A2A52A639006F9FA4 /* ResultHelper.swift */,
-				D3A4D7DD2A5378C1006957A6 /* QuestionPresenterTest.swift */,
+				D3AA72CD2A55F56A00502424 /* Main */,
+				D3AA72CC2A55F56000502424 /* Routing */,
+				D3AA72C82A55F51100502424 /* Presentation */,
+				D3AA72C42A55F4B600502424 /* UI */,
 			);
 			path = QuizforAppTests;
 			sourceTree = "<group>";
@@ -181,15 +169,155 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D3E4C9672A52A3C7006F9FA4 /* Views */ = {
+		D3AA72BE2A55F3DD00502424 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D30A9B752A4F137600FDEA3E /* IOSViewControllerFactory.swift */,
+				88C013982A15F2ED00BE0989 /* AppDelegate.swift */,
+				88C0139A2A15F2ED00BE0989 /* SceneDelegate.swift */,
+				88C013A12A15F2EF00BE0989 /* Assets.xcassets */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D3AA72BF2A55F41300502424 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D38CFAF52A3350690084160F /* UITableViewExtensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D3AA72C02A55F43100502424 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				88C013A32A15F2EF00BE0989 /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		D3AA72C12A55F44600502424 /* Question */ = {
 			isa = PBXGroup;
 			children = (
 				88C013CA2A15F60D00BE0989 /* QuestionViewControler.swift */,
 				889247152A15FB0D00F27603 /* QuestionViewControler.xib */,
+			);
+			path = Question;
+			sourceTree = "<group>";
+		};
+		D3AA72C22A55F45100502424 /* Result */ = {
+			isa = PBXGroup;
+			children = (
 				D30659332A32918000970B74 /* ResultsViewController.swift */,
 				D3D57E1A2A32949F00CA54B2 /* ResultsViewController.xib */,
 			);
-			path = Views;
+			path = Result;
+			sourceTree = "<group>";
+		};
+		D3AA72C32A55F47900502424 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				D38CFAF72A3350A10084160F /* PresentableAnswer.swift */,
+				D3E4C96C2A52A85C006F9FA4 /* ResultsPresenter.swift */,
+				D3A4D7DF2A5379F7006957A6 /* QuestionPresenter.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		D3AA72C42A55F4B600502424 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D3AA72C52A55F4BE00502424 /* Question */,
+				D3AA72C62A55F4C700502424 /* Result */,
+				D3AA72C72A55F4D000502424 /* Helpers */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D3AA72C52A55F4BE00502424 /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				88C013C82A15F4A400BE0989 /* QuestionViewControlerTest.swift */,
+			);
+			path = Question;
+			sourceTree = "<group>";
+		};
+		D3AA72C62A55F4C700502424 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				D3D57E1E2A3295D400CA54B2 /* ResultsViewControllerTest.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		D3AA72C72A55F4D000502424 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D31903CC2A32A6820068F522 /* TableViewHelpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D3AA72C82A55F51100502424 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				D3AA72CB2A55F54400502424 /* Helpers */,
+				D3AA72C92A55F51B00502424 /* Result */,
+				D3AA72CA2A55F52200502424 /* Question */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		D3AA72C92A55F51B00502424 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				D3E4C9652A52A3B0006F9FA4 /* ResultsPresenterTest.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		D3AA72CA2A55F52200502424 /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				D3A4D7DD2A5378C1006957A6 /* QuestionPresenterTest.swift */,
+			);
+			path = Question;
+			sourceTree = "<group>";
+		};
+		D3AA72CB2A55F54400502424 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D3E4C96A2A52A639006F9FA4 /* ResultHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D3AA72CC2A55F56000502424 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				D35EFB732A4E14F900551028 /* NavigationControlerRouterTest.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		D3AA72CD2A55F56A00502424 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D30A9B732A4F117300FDEA3E /* IOSViewControllerFactoryTest.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D3E4C9672A52A3C7006F9FA4 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D3E4C9682A52A3D9006F9FA4 /* Cells */,
+				D3AA72C02A55F43100502424 /* Launch */,
+				D3AA72C12A55F44600502424 /* Question */,
+				D3AA72C22A55F45100502424 /* Result */,
+				D3AA72BF2A55F41300502424 /* Helpers */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		D3E4C9682A52A3D9006F9FA4 /* Cells */ = {
@@ -203,13 +331,13 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		D3E4C9692A52A3FA006F9FA4 /* Factory */ = {
+		D3E4C9692A52A3FA006F9FA4 /* Routing */ = {
 			isa = PBXGroup;
 			children = (
+				D35EFB752A4E179900551028 /* NavigationControllerRouter.swift */,
 				D30A9B712A4F107C00FDEA3E /* ViewControllerFactory.swift */,
-				D30A9B752A4F137600FDEA3E /* IOSViewControllerFactory.swift */,
 			);
-			path = Factory;
+			path = Routing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
