@@ -9,7 +9,7 @@
 
 extension QuizResult: Hashable {
 
-    static func make(answers: [Question: Answer] = [:], score: Int = 1) -> QuizResult<Question, Answer> {
+    static func make(answers: [Question: Answer] = [:], score: Int = 0) -> QuizResult<Question, Answer> {
         return QuizResult(answers: answers, score: score)
     }
 
