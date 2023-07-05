@@ -71,6 +71,52 @@ class NavigationControlerRouterTest: XCTestCase {
         XCTAssertFalse(callbackWasFired)
     }
 
+    func test_routeToQuestion_multipleAnswer_configuresViewControllerWithSubmitButton() {
+
+        let viewController = UIViewController()
+
+        factory.stub(question: Question.multipleAnswer("Q1"), with: viewController)
+
+        sut.routeTo(question: Question.multipleAnswer("Q1"), answerCallback: { _ in })
+
+        XCTAssertNotNil(viewController.navigationItem.rightBarButtonItem)
+    }
+
+    func test_routeToQuestion_multipleAnswerSubmitButton_isDisabledWhenZeroAnswersSelected() {
+
+        let viewController = UIViewController()
+
+        factory.stub(question: Question.multipleAnswer("Q1"), with: viewController)
+
+        sut.routeTo(question: Question.multipleAnswer("Q1"), answerCallback: { _ in })
+        XCTAssertFalse(viewController.navigationItem.rightBarButtonItem!.isEnabled)
+
+        factory.answerCallback[Question.multipleAnswer("Q1")]!(["A1"])
+        XCTAssertTrue(viewController.navigationItem.rightBarButtonItem!.isEnabled)
+
+        factory.answerCallback[Question.multipleAnswer("Q1")]!([])
+        XCTAssertFalse(viewController.navigationItem.rightBarButtonItem!.isEnabled)
+
+    }
+
+    func test_routeToQuestion_multipleAnswerSubmitButton_progressesToNextQuestion() {
+
+        let viewController = UIViewController()
+        factory.stub(question: Question.multipleAnswer("Q1"), with: viewController)
+
+        var callbackWasFired = false
+        sut.routeTo(question: Question.multipleAnswer("Q1"), answerCallback: { _ in callbackWasFired = true})
+        XCTAssertFalse(viewController.navigationItem.rightBarButtonItem!.isEnabled)
+
+        factory.answerCallback[Question.multipleAnswer("Q1")]!(["A1"])
+
+        let button = viewController.navigationItem.rightBarButtonItem!
+
+        button.simulateTap()
+
+        XCTAssertTrue(callbackWasFired)
+    }
+
     class NoneAnimatedNavigationController: UINavigationController {
         override func pushViewController(_ viewController: UIViewController, animated: Bool) {
             super.pushViewController(viewController, animated: false)
@@ -102,5 +148,11 @@ class NavigationControlerRouterTest: XCTestCase {
             return stubbedResult[result] ?? UIViewController()
         }
 
+    }
+}
+
+private extension UIBarButtonItem {
+    func simulateTap() {
+        target?.performSelector(onMainThread: action!, with: nil, waitUntilDone: true)
     }
 }
