@@ -54,7 +54,7 @@ struct ResultsPresenter {
     private func formattedAnswer(_ answer: [String]) -> String {
         return answer.joined(separator: ", ")
     }
-    
+
     private func formattedWrongAnswer(_ question: Question<String>,
                                       _ userAnswer: [String],
                                       _ correctAnswer: [String]) -> String? {

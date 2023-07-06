@@ -7,7 +7,6 @@
 
 import Foundation
 import QuizforEngine
-// swiftlint:disable force_cast
 
 struct QuestionPresenter {
     let questions: [Question<String>]
@@ -20,5 +19,3 @@ struct QuestionPresenter {
         return "Question #\(index + 1)"
     }
 }
-
-// swiftlint:enable force_cast
