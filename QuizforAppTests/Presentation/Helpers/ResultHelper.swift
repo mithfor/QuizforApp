@@ -7,20 +7,20 @@
 
 @testable import QuizforEngine
 
-extension QuizResult {
-    static func make(answers: [Question: Answer] = [:], score: Int = 0) -> QuizResult<Question, Answer> {
-        return QuizResult(answers: answers, score: score)
+extension Result {
+    static func make(answers: [Question: Answer] = [:], score: Int = 0) -> Result<Question, Answer> {
+        return Result(answers: answers, score: score)
     }
 }
 
-extension QuizResult: Equatable where Answer: Equatable {
-    public static func == (lhs: QuizforEngine.QuizResult<Question, Answer>,
-                           rhs: QuizforEngine.QuizResult<Question, Answer>) -> Bool {
+extension Result: Equatable where Answer: Equatable {
+    public static func == (lhs: QuizforEngine.Result<Question, Answer>,
+                           rhs: QuizforEngine.Result<Question, Answer>) -> Bool {
         return lhs.score == rhs.score && lhs.answers == rhs.answers
     }
 }
 
-extension QuizResult: Hashable where Answer: Hashable {
+extension Result: Hashable where Answer: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(answers)
         hasher.combine(score)

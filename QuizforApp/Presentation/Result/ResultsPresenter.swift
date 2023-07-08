@@ -10,7 +10,7 @@ import QuizforEngine
 
 struct ResultsPresenter {
 
-    let result: QuizResult<Question<String>, [String]>
+    let result: Result<Question<String>, [String]>
     let questions: [Question<String>]
     let correctAnswers: [Question<String>: [String]]
 

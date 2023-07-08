@@ -67,7 +67,7 @@ class IOSViewControllerFactory: ViewControllerFactory {
         return controller
     }
 
-    func resultViewController(for result: QuizforEngine.QuizResult<Question<String>, [String]>) -> UIViewController {
+    func resultViewController(for result: QuizforEngine.Result<Question<String>, [String]>) -> UIViewController {
         let presenter = ResultsPresenter(result: result,
                                          questions: questions,
                                          correctAnswers: correctAnswers)

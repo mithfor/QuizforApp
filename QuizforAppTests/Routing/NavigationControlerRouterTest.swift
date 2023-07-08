@@ -41,10 +41,10 @@ class NavigationControlerRouterTest: XCTestCase {
     func test_routeToResult_showsResutController() {
 
         let viewController = UIViewController()
-        let result = QuizResult.make(answers: [singleAnswerQuestion: ["A1"]], score: 10)
+        let result = Result.make(answers: [singleAnswerQuestion: ["A1"]], score: 10)
 
         let secondViewController = UIViewController()
-        let secondResult = QuizResult.make(answers: [Question.singleAnswer("Q2"): ["A2"]], score: 20)
+        let secondResult = Result.make(answers: [Question.singleAnswer("Q2"): ["A2"]], score: 20)
 
         factory.stub(result: result, with: viewController)
         factory.stub(result: secondResult, with: secondViewController)
@@ -142,7 +142,7 @@ class NavigationControlerRouterTest: XCTestCase {
     class ViewControllerFactoryStub: ViewControllerFactory {
 
         private var stubbedQuestions = [Question<String>: UIViewController]()
-        private var stubbedResult = [QuizResult<Question<String>, [String]>: UIViewController]()
+        private var stubbedResult = [Result<Question<String>, [String]>: UIViewController]()
 
         var answerCallback = [Question<String>: ([String]) -> Void]()
 
@@ -150,7 +150,7 @@ class NavigationControlerRouterTest: XCTestCase {
             stubbedQuestions[question] = viewController
         }
 
-        func stub(result: QuizResult<Question<String>, [String]>, with viewController: UIViewController) {
+        func stub(result: Result<Question<String>, [String]>, with viewController: UIViewController) {
             stubbedResult[result] = viewController
         }
 
@@ -160,7 +160,7 @@ class NavigationControlerRouterTest: XCTestCase {
             return stubbedQuestions[question] ?? UIViewController()
         }
 
-        func resultViewController(for result: QuizResult<Question<String>, [String]>) -> UIViewController {
+        func resultViewController(for result: Result<Question<String>, [String]>) -> UIViewController {
             return stubbedResult[result] ?? UIViewController()
         }
 

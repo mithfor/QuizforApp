@@ -11,7 +11,7 @@ import QuizforEngine
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var game: Game<Question<String>, [String], NavigationControllerRouter>?
+    var game: Game<NavigationControllerRouter>?
 
     func scene(_ scene: UIScene,
                willConnectTo session: UISceneSession,
@@ -51,6 +51,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
 
-        game = startGame(questions: questions, router: router, correctAnswers: correctAnswers)
+        game = startGame(questions: questions, delegate: router, correctAnswers: correctAnswers)
     }
 }

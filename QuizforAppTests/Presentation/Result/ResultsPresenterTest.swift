@@ -25,7 +25,7 @@ class ResultsPresenterTest: XCTestCase {
 
         let orderedQuestions = [singleAnswerQuestion, multipleAnswerQuestion]
         let answers = [singleAnswerQuestion: ["A1"], multipleAnswerQuestion: ["A2", "A3"]]
-        let result = QuizResult.make(answers: answers, score: 1)
+        let result = Result.make(answers: answers, score: 1)
         let sut = ResultsPresenter(result: result, questions: orderedQuestions, correctAnswers: [:])
         // when (Act)
 
@@ -43,7 +43,7 @@ class ResultsPresenterTest: XCTestCase {
     func test_presentableAnswers_withWrongSingleAnswer_mapsAnswer() {
         let answers = [singleAnswerQuestion: ["A1"]]
         let correctAnswers = [singleAnswerQuestion: ["A2"]]
-        let result = QuizResult.make(answers: answers)
+        let result = Result.make(answers: answers)
 
         let sut = ResultsPresenter(result: result, questions: [singleAnswerQuestion], correctAnswers: correctAnswers)
 
@@ -56,7 +56,7 @@ class ResultsPresenterTest: XCTestCase {
     func test_presentableAnswers_withWrongMultipleAnswer_mapsAnswer() {
         let answers = [multipleAnswerQuestion: ["A1", "A4"]]
         let correctAnswers = [multipleAnswerQuestion: ["A2", "A3"]]
-        let result = QuizResult.make(answers: answers)
+        let result = Result.make(answers: answers)
 
         let sut = ResultsPresenter(result: result, questions: [multipleAnswerQuestion], correctAnswers: correctAnswers)
 
@@ -70,7 +70,7 @@ class ResultsPresenterTest: XCTestCase {
         let answers = [multipleAnswerQuestion: ["A1", "A4"], singleAnswerQuestion: ["A2"]]
         let correctAnswers = [multipleAnswerQuestion: ["A1", "A4"], singleAnswerQuestion: ["A2"] ]
         let orderedQuestions = [singleAnswerQuestion, multipleAnswerQuestion]
-        let result = QuizResult.make(answers: answers)
+        let result = Result.make(answers: answers)
 
         let sut = ResultsPresenter(result: result, questions: orderedQuestions, correctAnswers: correctAnswers)
 
