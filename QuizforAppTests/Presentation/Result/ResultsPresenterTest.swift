@@ -15,9 +15,7 @@ class ResultsPresenterTest: XCTestCase {
     let multipleAnswerQuestion = Question.multipleAnswer("Q2")
 
     func test_title_returnsFormatedTitle() {
-        let sut = ResultsPresenter(result: .make(), questions: [], correctAnswers: [:])
-
-        XCTAssertEqual(sut.title, "Result")
+        XCTAssertEqual( makeSUT().title, "Result")
     }
 
     func test_summary_withTwoQuestionsAndScoreOne_returnsSummary() {
@@ -53,7 +51,7 @@ class ResultsPresenterTest: XCTestCase {
         XCTAssertEqual(sut.presentableAnswers.first?.question, "Q1")
         XCTAssertEqual(sut.presentableAnswers.first?.answer, "A2")
         XCTAssertEqual(sut.presentableAnswers.first?.wrongAnswer, "A1")
-   }
+    }
 
     func test_presentableAnswers_withWrongMultipleAnswer_mapsAnswer() {
         let answers = [multipleAnswerQuestion: ["A1", "A4"]]
@@ -66,7 +64,7 @@ class ResultsPresenterTest: XCTestCase {
         XCTAssertEqual(sut.presentableAnswers.first?.question, "Q2")
         XCTAssertEqual(sut.presentableAnswers.first?.answer, "A2, A3")
         XCTAssertEqual(sut.presentableAnswers.first?.wrongAnswer, "A1, A4")
-   }
+    }
 
     func test_presentableAnswers_withTwoQuestions_mapsOrderedAnswer() {
         let answers = [multipleAnswerQuestion: ["A1", "A4"], singleAnswerQuestion: ["A2"]]
@@ -85,5 +83,11 @@ class ResultsPresenterTest: XCTestCase {
         XCTAssertEqual(sut.presentableAnswers.last?.answer, "A1, A4")
         XCTAssertNil(sut.presentableAnswers.last?.wrongAnswer)
 
-   }
+    }
+
+    // MARK: - Helpers
+
+    private func makeSUT() -> ResultsPresenter {
+        return ResultsPresenter(userAnswers: [], correctAnswers: [], scorer: { _, _ in 0})
+    }
 }
