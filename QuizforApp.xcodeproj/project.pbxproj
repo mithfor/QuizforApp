@@ -23,6 +23,8 @@
 		D31903D32A32B5740068F522 /* CorrectAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D31903D22A32B5740068F522 /* CorrectAnswerCell.xib */; };
 		D31903D72A32BB6F0068F522 /* WrongAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31903D62A32BB6F0068F522 /* WrongAnswerCell.swift */; };
 		D31903D92A32C3300068F522 /* WrongAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D31903D82A32C3300068F522 /* WrongAnswerCell.xib */; };
+		D333CB922A594FF500024E1A /* ScoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333CB912A594FF500024E1A /* ScoreTest.swift */; };
+		D333CB952A59506900024E1A /* BasicScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333CB942A59506900024E1A /* BasicScore.swift */; };
 		D35EFB742A4E14F900551028 /* NavigationControlerRouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35EFB732A4E14F900551028 /* NavigationControlerRouterTest.swift */; };
 		D35EFB762A4E179900551028 /* NavigationControllerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35EFB752A4E179900551028 /* NavigationControllerRouter.swift */; };
 		D38CFAF62A3350690084160F /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38CFAF52A3350690084160F /* UITableViewExtensions.swift */; };
@@ -82,6 +84,8 @@
 		D31903D22A32B5740068F522 /* CorrectAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CorrectAnswerCell.xib; sourceTree = "<group>"; };
 		D31903D62A32BB6F0068F522 /* WrongAnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongAnswerCell.swift; sourceTree = "<group>"; };
 		D31903D82A32C3300068F522 /* WrongAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WrongAnswerCell.xib; sourceTree = "<group>"; };
+		D333CB912A594FF500024E1A /* ScoreTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreTest.swift; sourceTree = "<group>"; };
+		D333CB942A59506900024E1A /* BasicScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicScore.swift; sourceTree = "<group>"; };
 		D35EFB6F2A4E13CD00551028 /* QuizforEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QuizforEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D35EFB732A4E14F900551028 /* NavigationControlerRouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControlerRouterTest.swift; sourceTree = "<group>"; };
 		D35EFB752A4E179900551028 /* NavigationControllerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouter.swift; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 		88C013972A15F2ED00BE0989 /* QuizforApp */ = {
 			isa = PBXGroup;
 			children = (
+				D333CB932A59501700024E1A /* Scoring */,
 				88C013A62A15F2EF00BE0989 /* Info.plist */,
 				D3AA72BE2A55F3DD00502424 /* Main */,
 				D3E4C9672A52A3C7006F9FA4 /* UI */,
@@ -151,12 +156,29 @@
 		88C013AE2A15F2F000BE0989 /* QuizforAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				D333CB902A594FE300024E1A /* Scoring */,
 				D3AA72CD2A55F56A00502424 /* Main */,
 				D3AA72CC2A55F56000502424 /* Routing */,
 				D3AA72C82A55F51100502424 /* Presentation */,
 				D3AA72C42A55F4B600502424 /* UI */,
 			);
 			path = QuizforAppTests;
+			sourceTree = "<group>";
+		};
+		D333CB902A594FE300024E1A /* Scoring */ = {
+			isa = PBXGroup;
+			children = (
+				D333CB912A594FF500024E1A /* ScoreTest.swift */,
+			);
+			path = Scoring;
+			sourceTree = "<group>";
+		};
+		D333CB932A59501700024E1A /* Scoring */ = {
+			isa = PBXGroup;
+			children = (
+				D333CB942A59506900024E1A /* BasicScore.swift */,
+			);
+			path = Scoring;
 			sourceTree = "<group>";
 		};
 		D35EFB6E2A4E13CD00551028 /* Frameworks */ = {
@@ -484,6 +506,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D38CFAF62A3350690084160F /* UITableViewExtensions.swift in Sources */,
+				D333CB952A59506900024E1A /* BasicScore.swift in Sources */,
 				88C013992A15F2ED00BE0989 /* AppDelegate.swift in Sources */,
 				D3E4C96D2A52A85C006F9FA4 /* ResultsPresenter.swift in Sources */,
 				88C0139B2A15F2ED00BE0989 /* SceneDelegate.swift in Sources */,
@@ -506,6 +529,7 @@
 				D3E4C9662A52A3B0006F9FA4 /* ResultsPresenterTest.swift in Sources */,
 				88C013C92A15F4A400BE0989 /* QuestionViewControlerTest.swift in Sources */,
 				D31903CD2A32A6820068F522 /* TableViewHelpers.swift in Sources */,
+				D333CB922A594FF500024E1A /* ScoreTest.swift in Sources */,
 				D3A4D7DE2A5378C1006957A6 /* QuestionPresenterTest.swift in Sources */,
 				D3E4C96B2A52A639006F9FA4 /* ResultHelper.swift in Sources */,
 				D3D57E1F2A3295D400CA54B2 /* ResultsViewControllerTest.swift in Sources */,
