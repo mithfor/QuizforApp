@@ -36,7 +36,6 @@
 		D3D57E1B2A32949F00CA54B2 /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3D57E1A2A32949F00CA54B2 /* ResultsViewController.xib */; };
 		D3D57E1F2A3295D400CA54B2 /* ResultsViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D57E1E2A3295D400CA54B2 /* ResultsViewControllerTest.swift */; };
 		D3E4C9662A52A3B0006F9FA4 /* ResultsPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E4C9652A52A3B0006F9FA4 /* ResultsPresenterTest.swift */; };
-		D3E4C96B2A52A639006F9FA4 /* ResultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E4C96A2A52A639006F9FA4 /* ResultHelper.swift */; };
 		D3E4C96D2A52A85C006F9FA4 /* ResultsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E4C96C2A52A85C006F9FA4 /* ResultsPresenter.swift */; };
 /* End PBXBuildFile section */
 
@@ -98,7 +97,6 @@
 		D3D57E1A2A32949F00CA54B2 /* ResultsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultsViewController.xib; sourceTree = "<group>"; };
 		D3D57E1E2A3295D400CA54B2 /* ResultsViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewControllerTest.swift; sourceTree = "<group>"; };
 		D3E4C9652A52A3B0006F9FA4 /* ResultsPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPresenterTest.swift; sourceTree = "<group>"; };
-		D3E4C96A2A52A639006F9FA4 /* ResultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultHelper.swift; sourceTree = "<group>"; };
 		D3E4C96C2A52A85C006F9FA4 /* ResultsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -282,7 +280,6 @@
 		D3AA72C82A55F51100502424 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				D3AA72CB2A55F54400502424 /* Helpers */,
 				D3AA72C92A55F51B00502424 /* Result */,
 				D3AA72CA2A55F52200502424 /* Question */,
 			);
@@ -303,14 +300,6 @@
 				D3A4D7DD2A5378C1006957A6 /* QuestionPresenterTest.swift */,
 			);
 			path = Question;
-			sourceTree = "<group>";
-		};
-		D3AA72CB2A55F54400502424 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				D3E4C96A2A52A639006F9FA4 /* ResultHelper.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		D3AA72CC2A55F56000502424 /* Routing */ = {
@@ -531,7 +520,6 @@
 				D31903CD2A32A6820068F522 /* TableViewHelpers.swift in Sources */,
 				D333CB922A594FF500024E1A /* ScoreTest.swift in Sources */,
 				D3A4D7DE2A5378C1006957A6 /* QuestionPresenterTest.swift in Sources */,
-				D3E4C96B2A52A639006F9FA4 /* ResultHelper.swift in Sources */,
 				D3D57E1F2A3295D400CA54B2 /* ResultsViewControllerTest.swift in Sources */,
 				D35EFB742A4E14F900551028 /* NavigationControlerRouterTest.swift in Sources */,
 				D30A9B742A4F117300FDEA3E /* IOSViewControllerFactoryTest.swift in Sources */,
