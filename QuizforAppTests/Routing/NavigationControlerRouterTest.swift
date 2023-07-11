@@ -56,16 +56,16 @@ class NavigationControlerRouterTest: XCTestCase {
     func test_routeToResult_showsResutController() {
 
         let viewController = UIViewController()
-        let result = Result.make(answers: [singleAnswerQuestion: ["A1"]], score: 10)
+        let userAnswers = [(singleAnswerQuestion, ["A1"])]
 
         let secondViewController = UIViewController()
-        let secondResult = Result.make(answers: [Question.singleAnswer("Q2"): ["A2"]], score: 20)
+        let secondUserAnswers = [(multipleAnswerQuestion, ["A2"])]
 
-        factory.stub(result: result, with: viewController)
-        factory.stub(result: secondResult, with: secondViewController)
+        factory.stub(resultForQuestions: [singleAnswerQuestion], with: viewController)
+        factory.stub(resultForQuestions: [multipleAnswerQuestion], with: secondViewController)
 
-        sut.routeTo(result: result)
-        sut.routeTo(result: secondResult)
+        sut.didCompleteQuiz(withAnswers: userAnswers)
+        sut.didCompleteQuiz(withAnswers: secondUserAnswers)
 
         XCTAssertEqual(navigationController.viewControllers.count, 2)
         XCTAssertEqual(navigationController.viewControllers.first, viewController)
@@ -157,7 +157,7 @@ class NavigationControlerRouterTest: XCTestCase {
     class ViewControllerFactoryStub: ViewControllerFactory {
 
         private var stubbedQuestions = [Question<String>: UIViewController]()
-        private var stubbedResult = [Result<Question<String>, [String]>: UIViewController]()
+        private var stubbedResults = [[Question<String>]: UIViewController]()
 
         var answerCallback = [Question<String>: ([String]) -> Void]()
 
@@ -165,8 +165,8 @@ class NavigationControlerRouterTest: XCTestCase {
             stubbedQuestions[question] = viewController
         }
 
-        func stub(result: Result<Question<String>, [String]>, with viewController: UIViewController) {
-            stubbedResult[result] = viewController
+        func stub(resultForQuestions questions: [Question<String>], with viewController: UIViewController) {
+            stubbedResults[questions] = viewController
         }
 
         func questionViewController(for question: Question<String>,
@@ -176,11 +176,11 @@ class NavigationControlerRouterTest: XCTestCase {
         }
 
         func resultsViewController(for userAnswers: Answers) -> UIViewController {
-            return UIViewController()
+            return stubbedResults[userAnswers.map { $0.question }] ?? UIViewController()
         }
 
         func resultsViewController(for result: Result<Question<String>, [String]>) -> UIViewController {
-            return stubbedResult[result] ?? UIViewController()
+            return UIViewController()
         }
 
     }
