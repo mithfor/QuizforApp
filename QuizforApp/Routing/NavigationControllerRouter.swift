@@ -8,7 +8,7 @@
 import UIKit
 import QuizforEngine
 
-class NavigationControllerRouter: QuizDelegate {
+final class NavigationControllerRouter: QuizDelegate {
     func answer(for question: QuizforEngine.Question<String>, completion: @escaping ([String]) -> Void) {
         switch question {
         case .singleAnswer:
