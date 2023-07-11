@@ -38,22 +38,7 @@ class NavigationControlerRouterTest: XCTestCase {
         XCTAssertEqual(navigationController.viewControllers.last, secondViewController)
     }
 
-    func test_routeToQuestion_showsQuestionController() {
-
-        let viewController = UIViewController()
-        let secondViewController = UIViewController()
-        factory.stub(question: singleAnswerQuestion, with: viewController)
-        factory.stub(question: singleAnswerQuestion2, with: secondViewController)
-
-        sut.answer(for: singleAnswerQuestion, completion: { _ in })
-        sut.answer(for: singleAnswerQuestion2, completion: { _ in })
-
-        XCTAssertEqual(navigationController.viewControllers.count, 2)
-        XCTAssertEqual(navigationController.viewControllers.first, viewController)
-        XCTAssertEqual(navigationController.viewControllers.last, secondViewController)
-    }
-
-    func test_routeToResult_showsResutController() {
+    func test_didCompleteQuiz_showsResutController() {
 
         let viewController = UIViewController()
         let userAnswers = [(singleAnswerQuestion, ["A1"])]
