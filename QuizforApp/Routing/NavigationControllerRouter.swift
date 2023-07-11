@@ -8,7 +8,7 @@
 import UIKit
 import QuizforEngine
 
-class NavigationControllerRouter: Router, QuizDelegate {
+class NavigationControllerRouter: QuizDelegate {
     func answer(for question: QuizforEngine.Question<String>, completion: @escaping ([String]) -> Void) {
         switch question {
         case .singleAnswer:
@@ -34,16 +34,6 @@ class NavigationControllerRouter: Router, QuizDelegate {
     init(_ navigationController: UINavigationController, factory: ViewControllerFactory) {
         self.navigationController = navigationController
         self.factory = factory
-    }
-
-    func routeTo(question: Question<String>, answerCallback: @escaping ([String]) -> Void) {
-
-        answer(for: question, completion: answerCallback)
-
-    }
-
-    func routeTo(result: Result<Question<String>, [String]>) {
-        show(factory.resultsViewController(for: result))
     }
 
     private func show(_ viewController: UIViewController) {

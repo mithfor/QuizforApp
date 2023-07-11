@@ -45,8 +45,8 @@ class NavigationControlerRouterTest: XCTestCase {
         factory.stub(question: singleAnswerQuestion, with: viewController)
         factory.stub(question: singleAnswerQuestion2, with: secondViewController)
 
-        sut.routeTo(question: singleAnswerQuestion, answerCallback: { _ in })
-        sut.routeTo(question: singleAnswerQuestion2, answerCallback: { _ in })
+        sut.answer(for: singleAnswerQuestion, completion: { _ in })
+        sut.answer(for: singleAnswerQuestion2, completion: { _ in })
 
         XCTAssertEqual(navigationController.viewControllers.count, 2)
         XCTAssertEqual(navigationController.viewControllers.first, viewController)
