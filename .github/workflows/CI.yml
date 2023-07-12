@@ -20,6 +20,6 @@ jobs:
     - run: sudo xcode-select -switch /Applcations/Xcode.app
     
     - name: Build and Test the App
-      run: xcodebuild cleanbuild test -workspace App/QuizApp.xcworkspace -scheme
+    - run: xcodebuild cleanbuild test -workspace App/QuizApp.xcworkspace -scheme
     - name: Run tests
-      run: swift test -v
+    - run: swift test -v
