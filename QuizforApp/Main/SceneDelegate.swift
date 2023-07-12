@@ -11,7 +11,7 @@ import QuizforEngine
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var game: Game<Question<String>, [String], NavigationControllerRouter>?
+    var quiz: Quiz?
 
     func scene(_ scene: UIScene,
                willConnectTo session: UISceneSession,
@@ -35,12 +35,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let options2 = [option21, option22, option23]
 
-        let correctAnswers = [question1: [option12],
-                              question2: [option21, option23]]
+        let correctAnswers = [(question1, [option12]),
+                              (question2, [option21, option23])]
 
-        let factory = IOSViewControllerFactory(questions: questions,
-                                               options: [question1: options1,
-                                                         question2: options2],
+        let options = [question1: options1, question2: options2]
+
+        let factory = IOSViewControllerFactory(options: options,
                                                correctAnswers: correctAnswers)
 
         let navigationController = UINavigationController(rootViewController: QuestionViewControler())
@@ -51,6 +51,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
 
-        game = startGame(questions: questions, router: router, correctAnswers: correctAnswers)
+        quiz = Quiz.start(questions: questions, delegate: router)
     }
 }

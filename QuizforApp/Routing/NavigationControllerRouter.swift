@@ -8,7 +8,25 @@
 import UIKit
 import QuizforEngine
 
-class NavigationControllerRouter: Router {
+final class NavigationControllerRouter: QuizDelegate {
+    func answer(for question: QuizforEngine.Question<String>, completion: @escaping ([String]) -> Void) {
+        switch question {
+        case .singleAnswer:
+            show(factory.questionViewController(for: question, answerCallback: completion))
+        case .multipleAnswer:
+            let button = UIBarButtonItem(title: "Submit", style: .plain, target: nil, action: nil)
+            let buttonController = SubmitButtonController(button, completion)
+            let controller  = factory.questionViewController(for: question, answerCallback: { selection in
+                buttonController.update(selection)
+            })
+            controller.navigationItem.rightBarButtonItem = button
+            show(controller)
+        }
+    }
+
+    func didCompleteQuiz(withAnswers answers: [(question: QuizforEngine.Question<String>, answer: [String])]) {
+        show(factory.resultsViewController(for: answers))
+    }
 
     private var navigationController: UINavigationController
     private var factory: ViewControllerFactory
@@ -16,27 +34,6 @@ class NavigationControllerRouter: Router {
     init(_ navigationController: UINavigationController, factory: ViewControllerFactory) {
         self.navigationController = navigationController
         self.factory = factory
-    }
-
-    func routeTo(question: Question<String>, answerCallback: @escaping ([String]) -> Void) {
-
-        switch question {
-        case .singleAnswer:
-            show(factory.questionViewController(for: question, answerCallback: answerCallback))
-        case .multipleAnswer:
-            let button = UIBarButtonItem(title: "Submit", style: .plain, target: nil, action: nil)
-            let buttonController = SubmitButtonController(button, answerCallback)
-            let controller  = factory.questionViewController(for: question, answerCallback: { selection in
-                buttonController.update(selection)
-            })
-            controller.navigationItem.rightBarButtonItem = button
-            show(controller)
-        }
-
-    }
-
-    func routeTo(result: QuizResult<Question<String>, [String]>) {
-        show(factory.resultViewController(for: result))
     }
 
     private func show(_ viewController: UIViewController) {

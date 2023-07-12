@@ -8,26 +8,29 @@
 import UIKit
 import QuizforEngine
 
-class IOSViewControllerFactory: ViewControllerFactory {
+final class IOSViewControllerFactory: ViewControllerFactory {
 
-    private let questions: [Question<String>]
+    typealias Answers = [(question: Question<String>, answer: [String])]
+
     private let options: [Question<String>: [String]]
-    private let correctAnswers: [Question<String>: [String]]
+    private let correctAnswers: Answers
 
-    init(questions: [Question<String>], options: [Question<String>: [String]], correctAnswers: [Question<String>: [String]]) {
-        self.questions = questions
+    private var questions: [Question<String>] {
+        return correctAnswers.map { $0.question }
+    }
+
+    init(options: [Question<String>: [String]], correctAnswers: Answers) {
+
         self.options = options
         self.correctAnswers = correctAnswers
     }
 
-    func questionViewController(for question: Question<String>,
-                                answerCallback: @escaping ([String]) -> Void) -> UIViewController {
+    func questionViewController(for question: QuizforEngine.Question<String>, answerCallback: @escaping ([String]) -> Void) -> UIViewController {
         guard let options = self.options[question] else {
             fatalError("Couldn't find options for question: \(question)")
         }
 
         return questionViewController(for: question, options: options, answerCallback: answerCallback)
-
     }
 
     private func questionViewController(for question: Question<String>,
@@ -59,20 +62,21 @@ class IOSViewControllerFactory: ViewControllerFactory {
 
         let presenter = QuestionPresenter(questions: questions, question: question)
         let controller = QuestionViewControler(question: value,
-                                                options: options,
-                                                allowsMultipleSelection: allowsMultipleSelection,
-                                                selection: answerCallback)
+                                               options: options,
+                                               allowsMultipleSelection: allowsMultipleSelection,
+                                               selection: answerCallback)
         controller.title = presenter.title
 
         return controller
     }
 
-    func resultViewController(for result: QuizforEngine.QuizResult<Question<String>, [String]>) -> UIViewController {
-        let presenter = ResultsPresenter(result: result,
-                                         questions: questions,
-                                         correctAnswers: correctAnswers)
+    func resultsViewController(for userAnswers: Answers) -> UIViewController {
+        let presenter = ResultsPresenter(userAnswers: userAnswers,
+                                         correctAnswers: correctAnswers,
+                                         scorer: BasicScore.score)
+
         let controller =  ResultsViewController(summary: presenter.summary,
-                                     answers: presenter.presentableAnswers)
+                                                answers: presenter.presentableAnswers)
         controller.title = presenter.title
         return controller
     }
