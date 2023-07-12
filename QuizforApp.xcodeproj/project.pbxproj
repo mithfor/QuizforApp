@@ -7,11 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		889247162A15FB0D00F27603 /* QuestionViewControler.xib in Resources */ = {isa = PBXBuildFile; fileRef = 889247152A15FB0D00F27603 /* QuestionViewControler.xib */; };
 		88C013992A15F2ED00BE0989 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C013982A15F2ED00BE0989 /* AppDelegate.swift */; };
 		88C0139B2A15F2ED00BE0989 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C0139A2A15F2ED00BE0989 /* SceneDelegate.swift */; };
-		88C013A22A15F2EF00BE0989 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88C013A12A15F2EF00BE0989 /* Assets.xcassets */; };
-		88C013A52A15F2EF00BE0989 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88C013A32A15F2EF00BE0989 /* LaunchScreen.storyboard */; };
 		88C013C92A15F4A400BE0989 /* QuestionViewControlerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C013C82A15F4A400BE0989 /* QuestionViewControlerTest.swift */; };
 		88C013CB2A15F60D00BE0989 /* QuestionViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C013CA2A15F60D00BE0989 /* QuestionViewControler.swift */; };
 		D30659342A32918000970B74 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30659332A32918000970B74 /* ResultsViewController.swift */; };
@@ -20,9 +17,7 @@
 		D30A9B762A4F137600FDEA3E /* IOSViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30A9B752A4F137600FDEA3E /* IOSViewControllerFactory.swift */; };
 		D31903CD2A32A6820068F522 /* TableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31903CC2A32A6820068F522 /* TableViewHelpers.swift */; };
 		D31903D12A32ABEB0068F522 /* CorrectAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31903D02A32ABEB0068F522 /* CorrectAnswerCell.swift */; };
-		D31903D32A32B5740068F522 /* CorrectAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D31903D22A32B5740068F522 /* CorrectAnswerCell.xib */; };
 		D31903D72A32BB6F0068F522 /* WrongAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31903D62A32BB6F0068F522 /* WrongAnswerCell.swift */; };
-		D31903D92A32C3300068F522 /* WrongAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D31903D82A32C3300068F522 /* WrongAnswerCell.xib */; };
 		D333CB922A594FF500024E1A /* ScoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333CB912A594FF500024E1A /* ScoreTest.swift */; };
 		D333CB952A59506900024E1A /* BasicScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333CB942A59506900024E1A /* BasicScore.swift */; };
 		D35EFB742A4E14F900551028 /* NavigationControlerRouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35EFB732A4E14F900551028 /* NavigationControlerRouterTest.swift */; };
@@ -33,7 +28,6 @@
 		D3A4D7E02A5379F7006957A6 /* QuestionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A4D7DF2A5379F7006957A6 /* QuestionPresenter.swift */; };
 		D3A6922A2A4EC04E004CC9C1 /* QuizforEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3A692282A4EC04E004CC9C1 /* QuizforEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D3AA72AF2A55CE5D00502424 /* QuizforEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3AA72AE2A55CE5D00502424 /* QuizforEngine.framework */; };
-		D3D57E1B2A32949F00CA54B2 /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3D57E1A2A32949F00CA54B2 /* ResultsViewController.xib */; };
 		D3D57E1F2A3295D400CA54B2 /* ResultsViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D57E1E2A3295D400CA54B2 /* ResultsViewControllerTest.swift */; };
 		D3E4C9662A52A3B0006F9FA4 /* ResultsPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E4C9652A52A3B0006F9FA4 /* ResultsPresenterTest.swift */; };
 		D3E4C96D2A52A85C006F9FA4 /* ResultsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E4C96C2A52A85C006F9FA4 /* ResultsPresenter.swift */; };
@@ -451,12 +445,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88C013A52A15F2EF00BE0989 /* LaunchScreen.storyboard in Resources */,
-				D31903D92A32C3300068F522 /* WrongAnswerCell.xib in Resources */,
-				88C013A22A15F2EF00BE0989 /* Assets.xcassets in Resources */,
-				889247162A15FB0D00F27603 /* QuestionViewControler.xib in Resources */,
-				D31903D32A32B5740068F522 /* CorrectAnswerCell.xib in Resources */,
-				D3D57E1B2A32949F00CA54B2 /* ResultsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,7 +473,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#if which swiftlint >/dev/null; then\n#  swiftlint\n#else\n#  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n#fi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

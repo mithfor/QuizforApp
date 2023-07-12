@@ -8,7 +8,7 @@
 import UIKit
 import XCTest
 @testable import QuizforApp
-@testable import QuizforEngine
+import QuizforEngine
 
 class NavigationControlerRouterTest: XCTestCase {
 
