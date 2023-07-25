@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -11,8 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionViewControler" customModule="QuizforApp" customModuleProvider="target">
             <connections>
-                <outlet property="headerLabel" destination="z8N-hz-xzW" id="TGN-WM-3EG"/>
-                <outlet property="tableView" destination="jhu-Cg-ura" id="2dR-4W-GSQ"/>
+                <outlet property="headerLabel" destination="z8N-hz-xzW" id="Nyi-E4-9id"/>
+                <outlet property="tableView" destination="jhu-Cg-ura" id="4Np-iw-jmu"/>
                 <outlet property="view" destination="iN0-l3-epB" id="R8i-aq-Bv8"/>
             </connections>
         </placeholder>

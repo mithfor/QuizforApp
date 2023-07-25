@@ -20,5 +20,113 @@
             landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DF9DD212-708E-4793-9473-4E035615C1AB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuizforApp/UI/Question/QuestionViewControler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "QuestionViewControler"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "DF9DD212-708E-4793-9473-4E035615C1AB - 28fdeb9c5b15994a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QuizforApp.QuestionViewControler.headerLabel.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "QuizforApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/devoronin/Developer/Quizfor/QuizforApp/QuizforApp/UI/Question/QuestionViewControler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  uuid = "DF9DD212-708E-4793-9473-4E035615C1AB - d9cac0820b12755e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QuizforApp.QuestionViewControler.headerLabel.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "QuizforApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/devoronin/Developer/Quizfor/QuizforApp/QuizforApp/UI/Question/QuestionViewControler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "DF9DD212-708E-4793-9473-4E035615C1AB - f1124cd2b5d0724d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QuizforApp.QuestionViewControler.headerLabel.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "QuizforApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/devoronin/Developer/Quizfor/QuizforApp/QuizforApp/UI/Question/QuestionViewControler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "DF9DD212-708E-4793-9473-4E035615C1AB - bb4ed4ac2310cac5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QuizforApp.QuestionViewControler.headerLabel.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "QuizforApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/devoronin/Developer/Quizfor/QuizforApp/QuizforApp/UI/Question/QuestionViewControler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "DF9DD212-708E-4793-9473-4E035615C1AB - 7ac9515886c46c79"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QuizforApp.QuestionViewControler.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; QuizforApp.QuestionViewControler"
+                  moduleName = "QuizforApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/devoronin/Developer/Quizfor/QuizforApp/QuizforApp/UI/Question/QuestionViewControler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "177">
+               </Location>
+               <Location
+                  uuid = "DF9DD212-708E-4793-9473-4E035615C1AB - d492cb3c19b94d53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QuizforApp.QuestionViewControler.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;QuizforApp.QuestionViewControler&gt;"
+                  moduleName = "QuizforApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/devoronin/Developer/Quizfor/QuizforApp/QuizforApp/UI/Question/QuestionViewControler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "134">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

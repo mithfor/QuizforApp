@@ -27,7 +27,6 @@ class QuestionViewControler: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         tableView.allowsMultipleSelection = allowsMultipleSelection
         headerLabel.text = question
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)

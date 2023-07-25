@@ -31,6 +31,10 @@
 		D3D57E1F2A3295D400CA54B2 /* ResultsViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D57E1E2A3295D400CA54B2 /* ResultsViewControllerTest.swift */; };
 		D3E4C9662A52A3B0006F9FA4 /* ResultsPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E4C9652A52A3B0006F9FA4 /* ResultsPresenterTest.swift */; };
 		D3E4C96D2A52A85C006F9FA4 /* ResultsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E4C96C2A52A85C006F9FA4 /* ResultsPresenter.swift */; };
+		D3E693832A6F660000A75C7A /* QuestionViewControler.xib in Resources */ = {isa = PBXBuildFile; fileRef = 889247152A15FB0D00F27603 /* QuestionViewControler.xib */; };
+		D3E693852A6F66B600A75C7A /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3D57E1A2A32949F00CA54B2 /* ResultsViewController.xib */; };
+		D3E693862A6F683300A75C7A /* CorrectAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D31903D22A32B5740068F522 /* CorrectAnswerCell.xib */; };
+		D3E693872A6F683F00A75C7A /* WrongAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D31903D82A32C3300068F522 /* WrongAnswerCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -445,6 +449,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3E693832A6F660000A75C7A /* QuestionViewControler.xib in Resources */,
+				D3E693872A6F683F00A75C7A /* WrongAnswerCell.xib in Resources */,
+				D3E693862A6F683300A75C7A /* CorrectAnswerCell.xib in Resources */,
+				D3E693852A6F66B600A75C7A /* ResultsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
