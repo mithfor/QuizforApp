@@ -51,6 +51,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
 
-        quiz = Quiz.start(questions: questions, delegate: router)
+        quiz = Quiz.start(questions: questions, delegate: router, dataSource:  router)
     }
 }
