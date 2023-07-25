@@ -50,16 +50,6 @@
                ReferencedContainer = "container:../QuizforEngine/QuizforEngine.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "88FBE96A2A151D740088F541"
-               BuildableName = "QuizforEngineTests.xctest"
-               BlueprintName = "QuizforEngineTests"
-               ReferencedContainer = "container:../QuizforEngine/QuizforEngine.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
