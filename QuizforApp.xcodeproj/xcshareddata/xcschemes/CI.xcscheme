@@ -20,6 +20,20 @@
                ReferencedContainer = "container:QuizforApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "88FBE9602A151D740088F541"
+               BuildableName = "QuizforEngine.framework"
+               BlueprintName = "QuizforEngine"
+               ReferencedContainer = "container:../QuizforEngine/QuizforEngine.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
