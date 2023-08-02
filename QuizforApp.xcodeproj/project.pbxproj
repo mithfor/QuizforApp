@@ -255,9 +255,7 @@
 		D3AA72C42A55F4B600502424 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				D3AA72C52A55F4BE00502424 /* Question */,
-				D3AA72C62A55F4C700502424 /* Result */,
-				D3AA72C72A55F4D000502424 /* Helpers */,
+				D3CA587B2A7A17C10072082E /* UIKit */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -343,6 +341,16 @@
 				D3E4C96C2A52A85C006F9FA4 /* ResultsPresenter.swift */,
 			);
 			path = Result;
+			sourceTree = "<group>";
+		};
+		D3CA587B2A7A17C10072082E /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				D3AA72C52A55F4BE00502424 /* Question */,
+				D3AA72C62A55F4C700502424 /* Result */,
+				D3AA72C72A55F4D000502424 /* Helpers */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 		D3E4C9672A52A3C7006F9FA4 /* UI */ = {
