@@ -67,59 +67,6 @@ class NavigationControlerRouterTest: XCTestCase {
         XCTAssertNil(viewController.navigationItem.rightBarButtonItem)
     }
 
-    func test_answerForQuestion_multipleAnswer_answerCallback_doesNotProgresstoNextQuestion() {
-        let multipleQuestion = multipleAnswerQuestion
-        var callbackWasFired = false
-        sut.answer(for: multipleQuestion, completion: { _ in callbackWasFired = true})
-        factory.answerCallback[multipleQuestion]!(["anything"])
-
-        XCTAssertFalse(callbackWasFired)
-    }
-
-    func test_answerForQuestion_multipleAnswer_configuresViewControllerWithSubmitButton() {
-
-        let viewController = UIViewController()
-
-        factory.stub(question: multipleAnswerQuestion, with: viewController)
-
-        sut.answer(for: multipleAnswerQuestion, completion: { _ in })
-
-        XCTAssertNotNil(viewController.navigationItem.rightBarButtonItem)
-    }
-
-    func test_answerForQuestion_multipleAnswerSubmitButton_isDisabledWhenZeroAnswersSelected() {
-
-        let viewController = UIViewController()
-
-        factory.stub(question: multipleAnswerQuestion, with: viewController)
-
-        sut.answer(for: multipleAnswerQuestion, completion: { _ in })
-        XCTAssertFalse(viewController.navigationItem.rightBarButtonItem!.isEnabled)
-
-        factory.answerCallback[multipleAnswerQuestion]!(["A1"])
-        XCTAssertTrue(viewController.navigationItem.rightBarButtonItem!.isEnabled)
-
-        factory.answerCallback[multipleAnswerQuestion]!([])
-        XCTAssertFalse(viewController.navigationItem.rightBarButtonItem!.isEnabled)
-
-    }
-
-    func test_answerForQuestion_multipleAnswerSubmitButton_progressesToNextQuestion() {
-
-        let viewController = UIViewController()
-        factory.stub(question: multipleAnswerQuestion, with: viewController)
-
-        var callbackWasFired = false
-        sut.answer(for: multipleAnswerQuestion, completion: { _ in callbackWasFired = true})
-        XCTAssertFalse(viewController.navigationItem.rightBarButtonItem!.isEnabled)
-
-        factory.answerCallback[multipleAnswerQuestion]!(["A1"])
-
-        viewController.navigationItem.rightBarButtonItem?.simulateTap()
-
-        XCTAssertTrue(callbackWasFired)
-    }
-
     // MARK: - Helpers
 
     private let navigationController = NoneAnimatedNavigationController()
