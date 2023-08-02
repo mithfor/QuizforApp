@@ -34,6 +34,7 @@
 		D3AABCC52A799A0300AC5FC6 /* iOSSwiftUIViewControllerFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AABCC42A799A0300AC5FC6 /* iOSSwiftUIViewControllerFactoryTest.swift */; };
 		D3AABCC72A799A5F00AC5FC6 /* iOSSwiftUIViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AABCC62A799A5F00AC5FC6 /* iOSSwiftUIViewControllerFactory.swift */; };
 		D3CA587E2A7A18320072082E /* MultipleSelectionStoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA587D2A7A18320072082E /* MultipleSelectionStoreTest.swift */; };
+		D3CA58802A7A27BB0072082E /* MultipleSelectionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA587F2A7A27BB0072082E /* MultipleSelectionStore.swift */; };
 		D3D57E1F2A3295D400CA54B2 /* ResultsViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D57E1E2A3295D400CA54B2 /* ResultsViewControllerTest.swift */; };
 		D3E4C9662A52A3B0006F9FA4 /* ResultsPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E4C9652A52A3B0006F9FA4 /* ResultsPresenterTest.swift */; };
 		D3E4C96D2A52A85C006F9FA4 /* ResultsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E4C96C2A52A85C006F9FA4 /* ResultsPresenter.swift */; };
@@ -104,6 +105,7 @@
 		D3AABCC42A799A0300AC5FC6 /* iOSSwiftUIViewControllerFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSwiftUIViewControllerFactoryTest.swift; sourceTree = "<group>"; };
 		D3AABCC62A799A5F00AC5FC6 /* iOSSwiftUIViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSwiftUIViewControllerFactory.swift; sourceTree = "<group>"; };
 		D3CA587D2A7A18320072082E /* MultipleSelectionStoreTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectionStoreTest.swift; sourceTree = "<group>"; };
+		D3CA587F2A7A27BB0072082E /* MultipleSelectionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectionStore.swift; sourceTree = "<group>"; };
 		D3D57E1A2A32949F00CA54B2 /* ResultsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultsViewController.xib; sourceTree = "<group>"; };
 		D3D57E1E2A3295D400CA54B2 /* ResultsViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewControllerTest.swift; sourceTree = "<group>"; };
 		D3E4C9652A52A3B0006F9FA4 /* ResultsPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPresenterTest.swift; sourceTree = "<group>"; };
@@ -411,6 +413,7 @@
 				D3AABCBE2A79854500AC5FC6 /* SingleAnswerQuestion.swift */,
 				D3AABCC02A798F9C00AC5FC6 /* QuestionHeader.swift */,
 				D3AABCC22A7990D400AC5FC6 /* SingleTextSelectionCell.swift */,
+				D3CA587F2A7A27BB0072082E /* MultipleSelectionStore.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				D31903D12A32ABEB0068F522 /* CorrectAnswerCell.swift in Sources */,
 				D31903D72A32BB6F0068F522 /* WrongAnswerCell.swift in Sources */,
 				88C013CB2A15F60D00BE0989 /* QuestionViewControler.swift in Sources */,
+				D3CA58802A7A27BB0072082E /* MultipleSelectionStore.swift in Sources */,
 				D3A4D7E02A5379F7006957A6 /* QuestionPresenter.swift in Sources */,
 				D35EFB762A4E179900551028 /* NavigationControllerRouter.swift in Sources */,
 				D30659342A32918000970B74 /* ResultsViewController.swift in Sources */,
