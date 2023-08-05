@@ -1,5 +1,5 @@
 //
-//  QuestionHeader.swift
+//  HeaderView.swift
 //  QuizforApp
 //
 //  Created by Dmitriy Voronin on 01.08.2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct QuestionHeader: View {
+struct HeaderView: View {
 
     let title: String
     let question: String
@@ -29,7 +29,7 @@ struct QuestionHeader: View {
 
 struct QuestionHeader_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionHeader(title: "A title", question: "A question")
+        HeaderView(title: "A title", question: "A question")
             .previewLayout(.sizeThatFits)
     }
 }
