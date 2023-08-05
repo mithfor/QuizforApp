@@ -43,6 +43,8 @@
 		D3CB73FD2A7E646800D8E19C /* UIImage+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB73FC2A7E646800D8E19C /* UIImage+TestHelpers.swift */; };
 		D3CB73FF2A7E77C400D8E19C /* snapshots in Resources */ = {isa = PBXBuildFile; fileRef = D3CB73FE2A7E77C400D8E19C /* snapshots */; };
 		D3CB74022A7E7A2F00D8E19C /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB74012A7E7A2F00D8E19C /* RoundedButton.swift */; };
+		D3CB74052A7E7FDB00D8E19C /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB74042A7E7FDB00D8E19C /* ResultView.swift */; };
+		D3CB740A2A7E8F6900D8E19C /* ResultAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB74092A7E8F6900D8E19C /* ResultAnswerCell.swift */; };
 		D3D57E1F2A3295D400CA54B2 /* ResultsViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D57E1E2A3295D400CA54B2 /* ResultsViewControllerTest.swift */; };
 		D3E4C9662A52A3B0006F9FA4 /* ResultsPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E4C9652A52A3B0006F9FA4 /* ResultsPresenterTest.swift */; };
 		D3E4C96D2A52A85C006F9FA4 /* ResultsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E4C96C2A52A85C006F9FA4 /* ResultsPresenter.swift */; };
@@ -122,6 +124,8 @@
 		D3CB73FC2A7E646800D8E19C /* UIImage+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+TestHelpers.swift"; sourceTree = "<group>"; };
 		D3CB73FE2A7E77C400D8E19C /* snapshots */ = {isa = PBXFileReference; lastKnownFileType = folder; path = snapshots; sourceTree = "<group>"; };
 		D3CB74012A7E7A2F00D8E19C /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		D3CB74042A7E7FDB00D8E19C /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		D3CB74092A7E8F6900D8E19C /* ResultAnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultAnswerCell.swift; sourceTree = "<group>"; };
 		D3D57E1A2A32949F00CA54B2 /* ResultsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultsViewController.xib; sourceTree = "<group>"; };
 		D3D57E1E2A3295D400CA54B2 /* ResultsViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewControllerTest.swift; sourceTree = "<group>"; };
 		D3E4C9652A52A3B0006F9FA4 /* ResultsPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPresenterTest.swift; sourceTree = "<group>"; };
@@ -404,6 +408,24 @@
 			path = ReusableViews;
 			sourceTree = "<group>";
 		};
+		D3CB74032A7E7FC700D8E19C /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				D3AABCBE2A79854500AC5FC6 /* SingleAnswerQuestion.swift */,
+				D3CA58812A7A29A40072082E /* MultipleAnswerQuestion.swift */,
+			);
+			path = Question;
+			sourceTree = "<group>";
+		};
+		D3CB74082A7E8F4A00D8E19C /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				D3CB74042A7E7FDB00D8E19C /* ResultView.swift */,
+				D3CB74092A7E8F6900D8E19C /* ResultAnswerCell.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
 		D3E4C9672A52A3C7006F9FA4 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,12 +470,12 @@
 		D3FD94512A7983D4006FDFFD /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				D3AABCBE2A79854500AC5FC6 /* SingleAnswerQuestion.swift */,
+				D3CB74032A7E7FC700D8E19C /* Question */,
 				D3CB74002A7E79A900D8E19C /* ReusableViews */,
 				D3AABCC22A7990D400AC5FC6 /* SingleTextSelectionCell.swift */,
 				D3CA587F2A7A27BB0072082E /* MultipleSelectionStore.swift */,
-				D3CA58812A7A29A40072082E /* MultipleAnswerQuestion.swift */,
 				D3CA58832A7A2A720072082E /* MultipleTextSelectionCell.swift */,
+				D3CB74082A7E8F4A00D8E19C /* Result */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -584,8 +606,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3CB740A2A7E8F6900D8E19C /* ResultAnswerCell.swift in Sources */,
 				D3AABCC12A798F9C00AC5FC6 /* HeaderView.swift in Sources */,
 				D38CFAF62A3350690084160F /* UITableViewExtensions.swift in Sources */,
+				D3CB74052A7E7FDB00D8E19C /* ResultView.swift in Sources */,
 				D333CB952A59506900024E1A /* BasicScore.swift in Sources */,
 				D3CA58842A7A2A720072082E /* MultipleTextSelectionCell.swift in Sources */,
 				88C013992A15F2ED00BE0989 /* AppDelegate.swift in Sources */,
