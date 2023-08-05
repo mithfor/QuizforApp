@@ -29,7 +29,7 @@
 		D3A6922A2A4EC04E004CC9C1 /* QuizforEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3A692282A4EC04E004CC9C1 /* QuizforEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D3AA72AF2A55CE5D00502424 /* QuizforEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3AA72AE2A55CE5D00502424 /* QuizforEngine.framework */; };
 		D3AABCBF2A79854500AC5FC6 /* SingleAnswerQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AABCBE2A79854500AC5FC6 /* SingleAnswerQuestion.swift */; };
-		D3AABCC12A798F9C00AC5FC6 /* QuestionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AABCC02A798F9C00AC5FC6 /* QuestionHeader.swift */; };
+		D3AABCC12A798F9C00AC5FC6 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AABCC02A798F9C00AC5FC6 /* HeaderView.swift */; };
 		D3AABCC32A7990D400AC5FC6 /* SingleTextSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AABCC22A7990D400AC5FC6 /* SingleTextSelectionCell.swift */; };
 		D3AABCC52A799A0300AC5FC6 /* iOSSwiftUIViewControllerFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AABCC42A799A0300AC5FC6 /* iOSSwiftUIViewControllerFactoryTest.swift */; };
 		D3AABCC72A799A5F00AC5FC6 /* iOSSwiftUIViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AABCC62A799A5F00AC5FC6 /* iOSSwiftUIViewControllerFactory.swift */; };
@@ -42,6 +42,7 @@
 		D3CB73FB2A7E632A00D8E19C /* UIViewController+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB73FA2A7E632A00D8E19C /* UIViewController+Snapshot.swift */; };
 		D3CB73FD2A7E646800D8E19C /* UIImage+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB73FC2A7E646800D8E19C /* UIImage+TestHelpers.swift */; };
 		D3CB73FF2A7E77C400D8E19C /* snapshots in Resources */ = {isa = PBXBuildFile; fileRef = D3CB73FE2A7E77C400D8E19C /* snapshots */; };
+		D3CB74022A7E7A2F00D8E19C /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB74012A7E7A2F00D8E19C /* RoundedButton.swift */; };
 		D3D57E1F2A3295D400CA54B2 /* ResultsViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D57E1E2A3295D400CA54B2 /* ResultsViewControllerTest.swift */; };
 		D3E4C9662A52A3B0006F9FA4 /* ResultsPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E4C9652A52A3B0006F9FA4 /* ResultsPresenterTest.swift */; };
 		D3E4C96D2A52A85C006F9FA4 /* ResultsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E4C96C2A52A85C006F9FA4 /* ResultsPresenter.swift */; };
@@ -107,7 +108,7 @@
 		D3A692282A4EC04E004CC9C1 /* QuizforEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QuizforEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3AA72AE2A55CE5D00502424 /* QuizforEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QuizforEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3AABCBE2A79854500AC5FC6 /* SingleAnswerQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAnswerQuestion.swift; sourceTree = "<group>"; };
-		D3AABCC02A798F9C00AC5FC6 /* QuestionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionHeader.swift; sourceTree = "<group>"; };
+		D3AABCC02A798F9C00AC5FC6 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		D3AABCC22A7990D400AC5FC6 /* SingleTextSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTextSelectionCell.swift; sourceTree = "<group>"; };
 		D3AABCC42A799A0300AC5FC6 /* iOSSwiftUIViewControllerFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSwiftUIViewControllerFactoryTest.swift; sourceTree = "<group>"; };
 		D3AABCC62A799A5F00AC5FC6 /* iOSSwiftUIViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSwiftUIViewControllerFactory.swift; sourceTree = "<group>"; };
@@ -120,6 +121,7 @@
 		D3CB73FA2A7E632A00D8E19C /* UIViewController+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Snapshot.swift"; sourceTree = "<group>"; };
 		D3CB73FC2A7E646800D8E19C /* UIImage+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+TestHelpers.swift"; sourceTree = "<group>"; };
 		D3CB73FE2A7E77C400D8E19C /* snapshots */ = {isa = PBXFileReference; lastKnownFileType = folder; path = snapshots; sourceTree = "<group>"; };
+		D3CB74012A7E7A2F00D8E19C /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		D3D57E1A2A32949F00CA54B2 /* ResultsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultsViewController.xib; sourceTree = "<group>"; };
 		D3D57E1E2A3295D400CA54B2 /* ResultsViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewControllerTest.swift; sourceTree = "<group>"; };
 		D3E4C9652A52A3B0006F9FA4 /* ResultsPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPresenterTest.swift; sourceTree = "<group>"; };
@@ -393,6 +395,15 @@
 			path = "Snapshot Test Helpers";
 			sourceTree = "<group>";
 		};
+		D3CB74002A7E79A900D8E19C /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				D3AABCC02A798F9C00AC5FC6 /* HeaderView.swift */,
+				D3CB74012A7E7A2F00D8E19C /* RoundedButton.swift */,
+			);
+			path = ReusableViews;
+			sourceTree = "<group>";
+		};
 		D3E4C9672A52A3C7006F9FA4 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -438,7 +449,7 @@
 			isa = PBXGroup;
 			children = (
 				D3AABCBE2A79854500AC5FC6 /* SingleAnswerQuestion.swift */,
-				D3AABCC02A798F9C00AC5FC6 /* QuestionHeader.swift */,
+				D3CB74002A7E79A900D8E19C /* ReusableViews */,
 				D3AABCC22A7990D400AC5FC6 /* SingleTextSelectionCell.swift */,
 				D3CA587F2A7A27BB0072082E /* MultipleSelectionStore.swift */,
 				D3CA58812A7A29A40072082E /* MultipleAnswerQuestion.swift */,
@@ -573,7 +584,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3AABCC12A798F9C00AC5FC6 /* QuestionHeader.swift in Sources */,
+				D3AABCC12A798F9C00AC5FC6 /* HeaderView.swift in Sources */,
 				D38CFAF62A3350690084160F /* UITableViewExtensions.swift in Sources */,
 				D333CB952A59506900024E1A /* BasicScore.swift in Sources */,
 				D3CA58842A7A2A720072082E /* MultipleTextSelectionCell.swift in Sources */,
@@ -590,6 +601,7 @@
 				D38CFAF82A3350A10084160F /* PresentableAnswer.swift in Sources */,
 				D3AABCBF2A79854500AC5FC6 /* SingleAnswerQuestion.swift in Sources */,
 				D30A9B722A4F107C00FDEA3E /* ViewControllerFactory.swift in Sources */,
+				D3CB74022A7E7A2F00D8E19C /* RoundedButton.swift in Sources */,
 				D3AABCC72A799A5F00AC5FC6 /* iOSSwiftUIViewControllerFactory.swift in Sources */,
 				D30A9B762A4F137600FDEA3E /* iOSUIKitViewControllerFactory.swift in Sources */,
 				D3AABCC32A7990D400AC5FC6 /* SingleTextSelectionCell.swift in Sources */,

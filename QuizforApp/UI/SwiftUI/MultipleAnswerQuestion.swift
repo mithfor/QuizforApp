@@ -23,21 +23,7 @@ struct MultipleAnswerQuestion: View {
 
         Spacer()
 
-        Button(action: store.submit, label:  {
-            HStack {
-                Spacer()
-                Text("Submit")
-                    .padding()
-                    .foregroundColor(.white)
-                Spacer()
-            }
-            .background(Color.blue)
-            .cornerRadius(25)
-
-        })
-        .buttonStyle(PlainButtonStyle())
-        .padding()
-        .disabled(!store.canSubmit)
+        RoundedButton(title: "Submit", isEnabled: store.canSubmit, action: store.submit)
     }
 }
 
