@@ -11,6 +11,14 @@ extension UIViewController {
     }
 }
 
+extension View {
+    func snapshot(for configuration: SnapshotConfiguration) -> UIImage {
+        return SnapshotWindow(configuration: configuration,
+                              root: UIHostingController(rootView: self))
+        .snapshot()
+    }
+}
+
 struct SnapshotConfiguration {
     let size: CGSize
     let safeAreaInsets: UIEdgeInsets

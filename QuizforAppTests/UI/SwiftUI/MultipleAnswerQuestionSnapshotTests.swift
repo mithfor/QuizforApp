@@ -10,12 +10,12 @@ import XCTest
 
 final class MultipleAnswerQuestionSnapshotTests: XCTestCase {
 
-//    func testExample() {
-//        let sut = MultipleAnswerQuestion(
-//            title: "A title",
-//            question: "A question",
-//            store: .init(options: ["Option 1", "Option 2"]))
-//
-//        record(snapshot: sut.snapshot(for: <#SnapshotConfiguration#>), named: "two_options")
-//    }
+    func test_Example() {
+        let sut = MultipleAnswerQuestion(
+            title: "A title",
+            question: "A question",
+            store: .init(options: ["Option 1", "Option 2"]))
+
+        assert(snapshot: sut.snapshot(for: SnapshotConfiguration.iPhone13(style: .light)), named: "two_options")
+    }
 }
