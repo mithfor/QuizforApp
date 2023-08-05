@@ -37,6 +37,11 @@
 		D3CA58802A7A27BB0072082E /* MultipleSelectionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA587F2A7A27BB0072082E /* MultipleSelectionStore.swift */; };
 		D3CA58822A7A29A40072082E /* MultipleAnswerQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA58812A7A29A40072082E /* MultipleAnswerQuestion.swift */; };
 		D3CA58842A7A2A720072082E /* MultipleTextSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA58832A7A2A720072082E /* MultipleTextSelectionCell.swift */; };
+		D3CA588A2A7A7EF60072082E /* MultipleAnswerQuestionSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA58892A7A7EF60072082E /* MultipleAnswerQuestionSnapshotTests.swift */; };
+		D3CB73F92A7E62C100D8E19C /* XCTestCase+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB73F82A7E62C100D8E19C /* XCTestCase+Snapshot.swift */; };
+		D3CB73FB2A7E632A00D8E19C /* UIViewController+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB73FA2A7E632A00D8E19C /* UIViewController+Snapshot.swift */; };
+		D3CB73FD2A7E646800D8E19C /* UIImage+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB73FC2A7E646800D8E19C /* UIImage+TestHelpers.swift */; };
+		D3CB73FF2A7E77C400D8E19C /* snapshots in Resources */ = {isa = PBXBuildFile; fileRef = D3CB73FE2A7E77C400D8E19C /* snapshots */; };
 		D3D57E1F2A3295D400CA54B2 /* ResultsViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D57E1E2A3295D400CA54B2 /* ResultsViewControllerTest.swift */; };
 		D3E4C9662A52A3B0006F9FA4 /* ResultsPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E4C9652A52A3B0006F9FA4 /* ResultsPresenterTest.swift */; };
 		D3E4C96D2A52A85C006F9FA4 /* ResultsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E4C96C2A52A85C006F9FA4 /* ResultsPresenter.swift */; };
@@ -110,6 +115,11 @@
 		D3CA587F2A7A27BB0072082E /* MultipleSelectionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectionStore.swift; sourceTree = "<group>"; };
 		D3CA58812A7A29A40072082E /* MultipleAnswerQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleAnswerQuestion.swift; sourceTree = "<group>"; };
 		D3CA58832A7A2A720072082E /* MultipleTextSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleTextSelectionCell.swift; sourceTree = "<group>"; };
+		D3CA58892A7A7EF60072082E /* MultipleAnswerQuestionSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleAnswerQuestionSnapshotTests.swift; sourceTree = "<group>"; };
+		D3CB73F82A7E62C100D8E19C /* XCTestCase+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Snapshot.swift"; sourceTree = "<group>"; };
+		D3CB73FA2A7E632A00D8E19C /* UIViewController+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Snapshot.swift"; sourceTree = "<group>"; };
+		D3CB73FC2A7E646800D8E19C /* UIImage+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+TestHelpers.swift"; sourceTree = "<group>"; };
+		D3CB73FE2A7E77C400D8E19C /* snapshots */ = {isa = PBXFileReference; lastKnownFileType = folder; path = snapshots; sourceTree = "<group>"; };
 		D3D57E1A2A32949F00CA54B2 /* ResultsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultsViewController.xib; sourceTree = "<group>"; };
 		D3D57E1E2A3295D400CA54B2 /* ResultsViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewControllerTest.swift; sourceTree = "<group>"; };
 		D3E4C9652A52A3B0006F9FA4 /* ResultsPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPresenterTest.swift; sourceTree = "<group>"; };
@@ -263,6 +273,7 @@
 		D3AA72C42A55F4B600502424 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D3CB73F72A7E629B00D8E19C /* Snapshot Test Helpers */,
 				D3CA587C2A7A17FC0072082E /* SwiftUI */,
 				D3CA587B2A7A17C10072082E /* UIKit */,
 			);
@@ -365,9 +376,21 @@
 		D3CA587C2A7A17FC0072082E /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				D3CB73FE2A7E77C400D8E19C /* snapshots */,
 				D3CA587D2A7A18320072082E /* MultipleSelectionStoreTest.swift */,
+				D3CA58892A7A7EF60072082E /* MultipleAnswerQuestionSnapshotTests.swift */,
 			);
 			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		D3CB73F72A7E629B00D8E19C /* Snapshot Test Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D3CB73F82A7E62C100D8E19C /* XCTestCase+Snapshot.swift */,
+				D3CB73FA2A7E632A00D8E19C /* UIViewController+Snapshot.swift */,
+				D3CB73FC2A7E646800D8E19C /* UIImage+TestHelpers.swift */,
+			);
+			path = "Snapshot Test Helpers";
 			sourceTree = "<group>";
 		};
 		D3E4C9672A52A3C7006F9FA4 /* UI */ = {
@@ -519,6 +542,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3CB73FF2A7E77C400D8E19C /* snapshots in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,14 +603,18 @@
 			files = (
 				D3E4C9662A52A3B0006F9FA4 /* ResultsPresenterTest.swift in Sources */,
 				88C013C92A15F4A400BE0989 /* QuestionViewControlerTest.swift in Sources */,
+				D3CA588A2A7A7EF60072082E /* MultipleAnswerQuestionSnapshotTests.swift in Sources */,
+				D3CB73FD2A7E646800D8E19C /* UIImage+TestHelpers.swift in Sources */,
 				D3CA587E2A7A18320072082E /* MultipleSelectionStoreTest.swift in Sources */,
 				D31903CD2A32A6820068F522 /* TableViewHelpers.swift in Sources */,
 				D333CB922A594FF500024E1A /* ScoreTest.swift in Sources */,
+				D3CB73F92A7E62C100D8E19C /* XCTestCase+Snapshot.swift in Sources */,
 				D3AABCC52A799A0300AC5FC6 /* iOSSwiftUIViewControllerFactoryTest.swift in Sources */,
 				D3A4D7DE2A5378C1006957A6 /* QuestionPresenterTest.swift in Sources */,
 				D3D57E1F2A3295D400CA54B2 /* ResultsViewControllerTest.swift in Sources */,
 				D35EFB742A4E14F900551028 /* NavigationControlerRouterTest.swift in Sources */,
 				D30A9B742A4F117300FDEA3E /* iOSUIKitViewControllerFactoryTest.swift in Sources */,
+				D3CB73FB2A7E632A00D8E19C /* UIViewController+Snapshot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
