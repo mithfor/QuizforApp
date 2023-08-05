@@ -33,7 +33,7 @@ struct MultipleSelectionOption {
     var isSelected = false
 
 
-    mutating func select() {
+    mutating func toggleSelection() {
         isSelected.toggle()
     }
 }

@@ -17,7 +17,7 @@ struct MultipleTextSelectionCell: View {
 
     var body: some View {
 
-        Button(action: { option.select() }, label: {
+        Button(action: { option.toggleSelection() }, label: {
             HStack {
                 Rectangle()
                     .strokeBorder(option.isSelected ? Color.blue : Color.secondary, lineWidth: 2.5)
