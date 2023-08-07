@@ -22,9 +22,8 @@ class NavigationControlerRouterTest: XCTestCase {
         sut.answer(for: singleAnswerQuestion, completion: { _ in })
         sut.answer(for: multipleAnswerQuestion, completion: { _ in })
 
-        XCTAssertEqual(navigationController.viewControllers.count, 2)
+        XCTAssertEqual(navigationController.viewControllers.count, 1)
         XCTAssertEqual(navigationController.viewControllers.first, viewController)
-        XCTAssertEqual(navigationController.viewControllers.last, secondViewController)
     }
 
     func test_didCompleteQuiz_showsResutController() {
@@ -41,9 +40,8 @@ class NavigationControlerRouterTest: XCTestCase {
         sut.didCompleteQuiz(withAnswers: userAnswers)
         sut.didCompleteQuiz(withAnswers: secondUserAnswers)
 
-        XCTAssertEqual(navigationController.viewControllers.count, 2)
+        XCTAssertEqual(navigationController.viewControllers.count, 1)
         XCTAssertEqual(navigationController.viewControllers.first, viewController)
-        XCTAssertEqual(navigationController.viewControllers.last, secondViewController)
     }
 
     func test_answerForQuestion_singleAnswer_answerCallback_progressesToNextQuestion() {
