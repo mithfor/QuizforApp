@@ -78,27 +78,27 @@ class iOSSwiftUIViewControllerFactoryTest: XCTestCase {
         XCTAssertEqual(view.store.options.map(\.text), options[multipleAnswerQuestion])
     }
 
-    func test_resultViewController_createsControllerWithTitle() {
+    func test_resultViewController_createsControllerWithTitle() throws {
 
-        let results = makeResults()
-        XCTAssertEqual(results.controller.title,
-                       results.presenter.title)
+        let (view, presenter) = try XCTUnwrap(makeResults())
+        XCTAssertEqual(view.title,
+                       presenter.title)
     }
 
-    func test_resultViewController_createsControllerWithSummary() {
+    func test_resultViewController_createsControllerWithSummary() throws {
 
-        let results = makeResults()
-        XCTAssertEqual(results.controller.summary.count,
-                       results.presenter.summary.count)
+        let (view, presenter) = try XCTUnwrap(makeResults())
+        XCTAssertEqual(view.summary.count,
+                       presenter.summary.count)
     }
 
 
 
-    func test_resultViewController_createsControllerWithPresentableAnswers() {
+    func test_resultViewController_createsControllerWithPresentableAnswers() throws {
 
-        let results = makeResults()
-        XCTAssertEqual(results.controller.answers.count,
-                       results.presenter.presentableAnswers.count)
+        let (view, presenter) = try XCTUnwrap(makeResults())
+        XCTAssertEqual(view.answers,
+                       presenter.presentableAnswers)
     }
 
     // MARK: - Helpers
@@ -143,9 +143,9 @@ class iOSSwiftUIViewControllerFactoryTest: XCTestCase {
         return controller?.rootView
     }
 
-    func makeResults() -> (controller: ResultsViewController, presenter: ResultsPresenter) {
+    func makeResults() -> (view: ResultView, presenter: ResultsPresenter)? {
         let userAnswers = [(singleAnswerQuestion, ["A1"]), (multipleAnswerQuestion, ["A1, A2"])]
-        let correctAnswers = [(singleAnswerQuestion, ["A1"]), (multipleAnswerQuestion, ["A1, A2"])]
+        let correctAnswers = [(singleAnswerQuestion, ["A1"]), (multipleAnswerQuestion, ["A4, A5"])]
         let presenter = ResultsPresenter(
             userAnswers: userAnswers,
             correctAnswers: correctAnswers,
@@ -153,9 +153,9 @@ class iOSSwiftUIViewControllerFactoryTest: XCTestCase {
 
         let sut = makeSUT()
 
-        let controller = sut.resultsViewController(for: userAnswers) as! ResultsViewController
+        let controller = sut.resultsViewController(for: userAnswers) as? UIHostingController<ResultView>
 
-        return (controller, presenter)
+        return controller.map {($0.rootView, presenter)}
     }
 
 }

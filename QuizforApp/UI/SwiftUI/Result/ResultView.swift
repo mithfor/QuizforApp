@@ -50,8 +50,8 @@ struct ResultView_Previews: PreviewProvider {
                            summary: "You got 2/5 correct",
                            answers: [
                             .init(question: "What is the answer on question #1?", answer: "A correct answer", wrongAnswer: "A wrong answer"),
-                            .init(question: "What is the answer on question #2?", answer: "A correct answer", wrongAnswer: nil),
-                            .init(question: "What is the answer on question #3?", answer: "A correct answer", wrongAnswer: "A wrong answer"),
+                            .init(question: "What is the answer on question #2?", answer: "A correct answer", wrongAnswer: "A wrong answer"),
+                            .init(question: "What is the answer on question #3?", answer: "A correct answer", wrongAnswer: nil),
                             .init(question: "What is the answer on question #4?", answer: "A correct answer", wrongAnswer: "A wrong answer"),
                             .init(question: "What is the answer on question #5?", answer: "A correct answer", wrongAnswer: nil)
                            ], playAgain: { playAgainCount += 1 })
