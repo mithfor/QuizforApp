@@ -17,7 +17,7 @@ final class iOSSwiftUINavigationAdapter: QuizDelegate, QuizDataSource {
     typealias Answer = [String]
     typealias Answers = [(question: Question, answer: Answer)]
 
-    private let navigation: UINavigationController
+    private let show: (UIViewController) -> Void
     private let options: [Question: Answer]
     private let correctAnswers: Answers
 
@@ -27,8 +27,8 @@ final class iOSSwiftUINavigationAdapter: QuizDelegate, QuizDataSource {
 
     private var playAgainAction: () -> Void
 
-    init(navigation: UINavigationController, options: [Question : Answer], correctAnswers: Answers, playAgainAction: @escaping () -> Void) {
-        self.navigation = navigation
+    init(show: @escaping (UIViewController) -> Void, options: [Question : Answer], correctAnswers: Answers, playAgainAction: @escaping () -> Void) {
+        self.show = show
         self.options = options
         self.correctAnswers = correctAnswers
         self.playAgainAction = playAgainAction
@@ -68,12 +68,6 @@ final class iOSSwiftUINavigationAdapter: QuizDelegate, QuizDataSource {
                 answers: presenter.presentableAnswers,
                 playAgain: playAgainAction))
     }
-
-    private func show(_ controller: UIViewController) {
-        navigation.setViewControllers([controller], animated: true)
-    }
-
-
 
     private func questionViewController(for question: Question,
                                         options: Answer,

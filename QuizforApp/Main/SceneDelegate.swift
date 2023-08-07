@@ -51,12 +51,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let options = [question1: options1, question2: options2]
 
         let adapter = iOSSwiftUINavigationAdapter(
-            navigation: navigationController,
+            show: { [navigationController] in
+                $0.modalPresentationStyle = .fullScreen
+                navigationController.topModal.present($0, animated: true)
+            },
             options: options,
             correctAnswers: correctAnswers,
             playAgainAction: startNewQuizfor
         )
 
+        let factory = iOSUIKitViewControllerFactory(options: options, correctAnswers: correctAnswers)
+        let router = NavigationControllerRouter(navigationController, factory: factory)
+
         quiz = Quiz.start(questions: questions, delegate: adapter, dataSource: adapter)
+    }
+}
+
+private extension UIViewController {
+    var topModal: UIViewController {
+        presentedViewController?.topModal ?? self
     }
 }
