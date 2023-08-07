@@ -101,6 +101,20 @@ class iOSSwiftUIViewControllerFactoryTest: XCTestCase {
                        presenter.presentableAnswers)
     }
 
+    func test_resultViewController_createsControllerWithPlayAgainAction() throws {
+
+        var playAgainCount = 0
+        let (view, _) = try XCTUnwrap(makeResults(playAgainAction: { playAgainCount += 1 }))
+
+        XCTAssertEqual(playAgainCount, 0)
+
+        view.playAgain()
+        XCTAssertEqual(playAgainCount, 1)
+
+        view.playAgain()
+        XCTAssertEqual(playAgainCount, 2)
+    }
+
     // MARK: - Helpers
 
     private var singleAnswerQuestion: Question<String> { .singleAnswer("Q1")}
@@ -120,8 +134,10 @@ class iOSSwiftUIViewControllerFactoryTest: XCTestCase {
     }
 
 
-    func makeSUT() -> iOSSwiftUIViewControllerFactory {
-        return iOSSwiftUIViewControllerFactory(options: options, correctAnswers: correctAnswers)
+    func makeSUT(playAgainAction: @escaping () -> Void = {}) -> iOSSwiftUIViewControllerFactory {
+        return iOSSwiftUIViewControllerFactory(options: options,
+                                               correctAnswers: correctAnswers,
+                                               playAgainAction: playAgainAction)
     }
 
     private func makeSingleAnswerQuestion(
@@ -143,7 +159,7 @@ class iOSSwiftUIViewControllerFactoryTest: XCTestCase {
         return controller?.rootView
     }
 
-    func makeResults() -> (view: ResultView, presenter: ResultsPresenter)? {
+    func makeResults(playAgainAction: @escaping () -> Void = {}) -> (view: ResultView, presenter: ResultsPresenter)? {
         let userAnswers = [(singleAnswerQuestion, ["A1"]), (multipleAnswerQuestion, ["A1, A2"])]
         let correctAnswers = [(singleAnswerQuestion, ["A1"]), (multipleAnswerQuestion, ["A4, A5"])]
         let presenter = ResultsPresenter(
@@ -151,7 +167,7 @@ class iOSSwiftUIViewControllerFactoryTest: XCTestCase {
             correctAnswers: correctAnswers,
             scorer: BasicScore.score)
 
-        let sut = makeSUT()
+        let sut = makeSUT(playAgainAction: playAgainAction)
 
         let controller = sut.resultsViewController(for: userAnswers) as? UIHostingController<ResultView>
 

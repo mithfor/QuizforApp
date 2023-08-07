@@ -346,8 +346,8 @@
 		D3AA72CD2A55F56A00502424 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				D30A9B732A4F117300FDEA3E /* iOSUIKitViewControllerFactoryTest.swift */,
 				D3AABCC42A799A0300AC5FC6 /* iOSSwiftUIViewControllerFactoryTest.swift */,
+				D30A9B732A4F117300FDEA3E /* iOSUIKitViewControllerFactoryTest.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";

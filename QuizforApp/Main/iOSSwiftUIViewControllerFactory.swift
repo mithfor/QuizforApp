@@ -20,10 +20,12 @@ final class iOSSwiftUIViewControllerFactory: ViewControllerFactory {
         return correctAnswers.map { $0.question }
     }
 
-    init(options: [Question<String>: [String]], correctAnswers: Answers) {
+    private var playAgainAction: () -> Void
 
+    init(options: [Question<String> : [String]], correctAnswers: Answers, playAgainAction: @escaping () -> Void = {}) {
         self.options = options
         self.correctAnswers = correctAnswers
+        self.playAgainAction = playAgainAction
     }
 
     func questionViewController(for question: QuizforEngine.Question<String>, answerCallback: @escaping ([String]) -> Void) -> UIViewController {
@@ -87,6 +89,6 @@ final class iOSSwiftUIViewControllerFactory: ViewControllerFactory {
                 title: presenter.title,
                 summary: presenter.summary,
                 answers: presenter.presentableAnswers,
-                playAgain: {}))
+                playAgain: playAgainAction))
     }
 }
