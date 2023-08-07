@@ -22,7 +22,7 @@ final class iOSSwiftUIViewControllerFactory: ViewControllerFactory {
 
     private var playAgainAction: () -> Void
 
-    init(options: [Question<String> : [String]], correctAnswers: Answers, playAgainAction: @escaping () -> Void = {}) {
+    init(options: [Question<String> : [String]], correctAnswers: Answers, playAgainAction: @escaping () -> Void) {
         self.options = options
         self.correctAnswers = correctAnswers
         self.playAgainAction = playAgainAction

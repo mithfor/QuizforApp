@@ -12,6 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     var quiz: Quiz?
+    private lazy var navigationController = UINavigationController(rootViewController: QuestionViewControler())
 
     func scene(_ scene: UIScene,
                willConnectTo session: UISceneSession,
@@ -19,6 +20,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
+        window = UIWindow(windowScene: windowScene)
+
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+
+        startNewQuizfor()
+    }
+
+    private func startNewQuizfor() {
         let question1 = Question.singleAnswer("What is the fifth planet from the sun?")
         let question2 = Question.multipleAnswer("Tag famous Astronomers.")
         let questions = [question1, question2]
@@ -41,15 +51,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let options = [question1: options1, question2: options2]
 
         let factory = iOSSwiftUIViewControllerFactory(options: options,
-                                               correctAnswers: correctAnswers)
+                                                      correctAnswers: correctAnswers,
+                                                      playAgainAction: startNewQuizfor)
 
-        let navigationController = UINavigationController(rootViewController: QuestionViewControler())
         let router = NavigationControllerRouter(navigationController, factory: factory)
-
-        window = UIWindow(windowScene: windowScene)
-
-        window?.rootViewController = navigationController
-        window?.makeKeyAndVisible()
 
         quiz = Quiz.start(questions: questions, delegate: router, dataSource:  router)
     }
